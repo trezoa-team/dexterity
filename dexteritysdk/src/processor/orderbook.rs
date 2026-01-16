@@ -3,11 +3,11 @@ use agnostic_orderbook::{
     state::{EVENT_QUEUE_HEADER_LEN, REGISTER_SIZE},
 };
 use bonfida_utils::InstructionsAccount;
-use solana_program::{
+use trezoa_program::{
     instruction::Instruction, pubkey::Pubkey, system_instruction::create_account,
 };
-use solana_program_test::ProgramTestContext;
-use solana_sdk::signature::{Keypair, Signer};
+use trezoa_program_test::ProgramTestContext;
+use trezoa_sdk::signature::{Keypair, Signer};
 
 use crate::{common::utils::*, sdk_client::SDKClient, KeypairD};
 

@@ -1,8 +1,8 @@
 // additional methods for context object
 
 use itertools::Itertools;
-use solana_program::{pubkey::Pubkey, system_instruction::create_account};
-use solana_sdk::signature::{Keypair, Signer};
+use trezoa_program::{pubkey::Pubkey, system_instruction::create_account};
+use trezoa_sdk::signature::{Keypair, Signer};
 
 use constant_fees::initialize_trader_fee_acct_ix;
 
@@ -133,7 +133,7 @@ impl SDKContext {
                     trader_fee_acct,
                     self.market_product_group,
                     trader_risk_group.pubkey(),
-                    solana_program::system_program::id(),
+                    trezoa_program::system_program::id(),
                 )],
                 vec![],
             )

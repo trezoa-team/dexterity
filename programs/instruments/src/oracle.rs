@@ -2,7 +2,7 @@ use crate::{error::DerivativeError, state::enums::OracleType};
 use borsh::BorshDeserialize;
 use dex::{error::UtilError, utils::numeric::Fractional};
 use dummy_oracle::state::OraclePrice;
-use solana_program::{
+use trezoa_program::{
     account_info::AccountInfo, clock::Clock, entrypoint::ProgramResult, msg,
     program_error::ProgramError, pubkey::Pubkey,
 };

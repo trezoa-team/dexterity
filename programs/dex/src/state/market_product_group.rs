@@ -2,7 +2,7 @@ use std::ops::{Deref, DerefMut};
 
 use anchor_lang::{
     prelude::*,
-    solana_program::{
+    trezoa_program::{
         entrypoint::ProgramResult, program_error::ProgramError, program_pack::IsInitialized,
         pubkey::Pubkey,
     },

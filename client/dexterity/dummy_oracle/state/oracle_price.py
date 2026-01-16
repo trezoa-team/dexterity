@@ -1,4 +1,4 @@
-from solana.publickey import PublicKey
+from trezoa.publickey import PublicKey
 
 from dexterity.dummy_oracle.state.common import AccountTag
 from podite import pod, U64, I64

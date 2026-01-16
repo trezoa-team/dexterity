@@ -11,12 +11,12 @@ use pyth_client::{
     load_mapping, load_price, load_product, CorpAction, PriceStatus, PriceType, Product, PythError,
     PROD_HDR_SIZE,
 };
-use solana_program::{
+use trezoa_program::{
     program_pack::Pack, pubkey::Pubkey, system_instruction::create_account, system_program, sysvar,
     sysvar::clock::Clock,
 };
-use solana_program_test::{ProgramTest, ProgramTestContext};
-use solana_sdk::{
+use trezoa_program_test::{ProgramTest, ProgramTestContext};
+use trezoa_sdk::{
     account::{Account, ReadableAccount},
     client::{Client, SyncClient},
     commitment_config::CommitmentConfig,
@@ -378,7 +378,7 @@ pub async fn bootstrap_full(
         // assertions
         let account = ctx.client.get_account(sdk_trader.wallet).await?;
         let token_account =
-            spl_token::state::Account::unpack_unchecked(account.data.as_slice()).unwrap();
+            tpl_token::state::Account::unpack_unchecked(account.data.as_slice()).unwrap();
         assert_eq!(token_account.owner, sdk_trader.key());
 
         let trader_risk_group = sdk_trader.get_trader_risk_group(&ctx.client).await;
@@ -476,7 +476,7 @@ pub async fn default_clock_and_oracle(
         client,
         ctx.dummy_oracle_program_id,
         &instrument_admin.payer,
-        solana_program::system_program::id(),
+        trezoa_program::system_program::id(),
     )
     .await
     .unwrap();
@@ -485,7 +485,7 @@ pub async fn default_clock_and_oracle(
         client,
         ctx.dummy_oracle_program_id,
         &instrument_admin.payer,
-        solana_program::system_program::id(),
+        trezoa_program::system_program::id(),
         CreateOracleOptionalArgs::default(),
     )
     .await

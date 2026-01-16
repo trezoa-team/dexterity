@@ -32,7 +32,7 @@ def dir_to_pids(dir: str):
         if match is None:
             continue
         program = match.groups()[0]
-        program_to_id[program] = run(f"solana-keygen pubkey {dir}/{filename}")
+        program_to_id[program] = run(f"trezoa-keygen pubkey {dir}/{filename}")
     return program_to_id
 
 

@@ -1,11 +1,11 @@
 use anchor_lang::{InstructionData, ToAccountMetas};
 use dex::{accounts, state::constants::NAME_LEN, utils::numeric::Fractional};
-use solana_program::{
+use trezoa_program::{
     instruction::{AccountMeta, Instruction},
     pubkey::Pubkey,
 };
-use solana_program_test::ProgramTestContext;
-use solana_sdk::signature::{Keypair, Signer};
+use trezoa_program_test::ProgramTestContext;
+use trezoa_sdk::signature::{Keypair, Signer};
 
 use crate::{common::utils::*, sdk_client::SDKClient};
 

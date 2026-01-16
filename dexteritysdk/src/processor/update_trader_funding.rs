@@ -3,13 +3,13 @@ use agnostic_orderbook::state::*;
 use anchor_lang::{InstructionData, ToAccountMetas};
 use dex::{accounts, instruction, state::enums::OrderType, utils::numeric::Fractional};
 use rand::Rng;
-use solana_program::{
+use trezoa_program::{
     instruction::{AccountMeta, Instruction},
     pubkey::Pubkey,
     system_program,
 };
-use solana_program_test::ProgramTestContext;
-use solana_sdk::signature::{Keypair, Signer};
+use trezoa_program_test::ProgramTestContext;
+use trezoa_sdk::signature::{Keypair, Signer};
 
 pub fn update_trader_funding_ixs(
     trader_risk_group: Pubkey,

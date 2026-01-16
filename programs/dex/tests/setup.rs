@@ -8,9 +8,9 @@ use dexteritysdk::{
     ANCHOR_CREATE_RISK_STATE_ACCOUNT_DISCRIMINANT, ANCHOR_VALIDATE_ACCOUNT_HEALTH_DISCRIMINANT,
     ANCHOR_VALIDATE_ACCOUNT_LIQUIDATION_DISCRIMINANT, FIND_FEES_DISCRIMINANT,
 };
-use solana_program::{pubkey::Pubkey, system_program};
-use solana_program_test::ProgramTest;
-use solana_sdk::signature::{Keypair, Signer};
+use trezoa_program::{pubkey::Pubkey, system_program};
+use trezoa_program_test::ProgramTest;
+use trezoa_sdk::signature::{Keypair, Signer};
 
 use dex::{state::constants::*, utils::numeric::*};
 
@@ -137,11 +137,11 @@ pub async fn bootstrap_tests(
     program_test.add_program("dummy_oracle", config.dummy_oracle_program_id, None);
     program_test.add_account(
         config.optional.mint_authority.as_ref().unwrap().pubkey(),
-        solana_sdk::account::Account {
+        trezoa_sdk::account::Account {
             lamports: 100_000_000_000,
             data: vec![],
             owner: system_program::id(),
-            ..solana_sdk::account::Account::default()
+            ..trezoa_sdk::account::Account::default()
         },
     );
     let prg_test_ctx = program_test.start_with_context().await;

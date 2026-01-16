@@ -1,7 +1,7 @@
 use anchor_lang::{InstructionData, ToAccountMetas};
 use anyhow::anyhow;
-use solana_program::{instruction::Instruction, pubkey::Pubkey};
-use solana_sdk::signer::Signer;
+use trezoa_program::{instruction::Instruction, pubkey::Pubkey};
+use trezoa_sdk::signer::Signer;
 
 use constant_fees::update_fees_ix;
 use dex::{accounts, instruction};
@@ -19,7 +19,7 @@ pub fn sweep_fees_ix(
         fee_collector,
         fee_collector_token_account,
         market_product_group_vault,
-        token_program: spl_token::ID,
+        token_program: tpl_token::ID,
     };
     vec![Instruction {
         program_id: dex::ID,
@@ -52,7 +52,7 @@ impl DexAdmin {
                     self.payer.pubkey(),
                     self.fee_model_config_acct,
                     self.market_product_group,
-                    solana_program::system_program::id(),
+                    trezoa_program::system_program::id(),
                     constant_fees::UpdateFeesParams {
                         maker_fee_bps,
                         taker_fee_bps,

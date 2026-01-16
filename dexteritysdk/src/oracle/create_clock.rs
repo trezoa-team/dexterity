@@ -4,11 +4,11 @@ use crate::{
     state::clone_keypair,
     KeypairD, SDKContext,
 };
-use solana_program::{
+use trezoa_program::{
     instruction::Instruction, message::Message, program_error::ProgramError,
     program_option::COption, program_pack::Pack, pubkey::Pubkey, sysvar::rent::Rent,
 };
-use solana_sdk::{
+use trezoa_sdk::{
     account::Account,
     client::{Client, SyncClient},
     signature::{Keypair, Signer},

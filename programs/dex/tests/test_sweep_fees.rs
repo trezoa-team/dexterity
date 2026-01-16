@@ -1,9 +1,9 @@
 #![allow(non_snake_case)]
 
 use agnostic_orderbook::state::Side;
-use anchor_lang::solana_program::program_pack::Pack;
+use anchor_lang::trezoa_program::program_pack::Pack;
 use dexteritysdk::{common::utils::*, MINT_DECIMALS};
-use solana_sdk::account::ReadableAccount;
+use trezoa_sdk::account::ReadableAccount;
 
 use dex::utils::numeric::{bps, Fractional};
 
@@ -40,11 +40,11 @@ async fn test_sweep_fees() -> SDKResult {
     taker.deposit(ctx, 1000).await.unwrap();
     // check vault has been funded
     {
-        let vault_wallet = spl_token::state::Account::unpack(
+        let vault_wallet = tpl_token::state::Account::unpack(
             ctx.client.get_account(ctx.vault).await.unwrap().data(),
         )
         .unwrap();
-        let vault_amount_ui = spl_token::amount_to_ui_amount(vault_wallet.amount, MINT_DECIMALS);
+        let vault_amount_ui = tpl_token::amount_to_ui_amount(vault_wallet.amount, MINT_DECIMALS);
         assert_eq_frac(
             Fractional::new(vault_wallet.amount as i64, MINT_DECIMALS as u64),
             2000,
@@ -89,7 +89,7 @@ async fn test_sweep_fees() -> SDKResult {
     ctx.sweep_fees().await.unwrap();
     // check vault has been debited and fee_wallet credited
     {
-        let vault_wallet = spl_token::state::Account::unpack(
+        let vault_wallet = tpl_token::state::Account::unpack(
             ctx.client.get_account(ctx.vault).await.unwrap().data(),
         )
         .unwrap();
@@ -98,7 +98,7 @@ async fn test_sweep_fees() -> SDKResult {
             deposit * 2 + (-total_fees_collected),
         );
 
-        let fee_wallet = spl_token::state::Account::unpack(
+        let fee_wallet = tpl_token::state::Account::unpack(
             ctx.client
                 .get_account(ctx.fee_collector_wallet)
                 .await

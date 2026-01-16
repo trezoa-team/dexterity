@@ -1,6 +1,6 @@
 use borsh::{BorshDeserialize, BorshSerialize};
 
-use solana_program::pubkey::Pubkey;
+use trezoa_program::pubkey::Pubkey;
 
 #[derive(BorshDeserialize, BorshSerialize, Copy, Clone, Debug, PartialEq)]
 #[repr(u8)]

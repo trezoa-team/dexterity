@@ -1,13 +1,13 @@
 #![allow(non_snake_case)]
 use agnostic_orderbook::state::Side;
-use anchor_lang::solana_program::pubkey::Pubkey;
+use anchor_lang::trezoa_program::pubkey::Pubkey;
 use dex::{
     state::constants::*,
     utils::numeric::{Fractional, ZERO_FRAC},
 };
 use dexteritysdk::{common::utils::*, processor::orderbook::*, state::Order};
 use rand::prelude::SliceRandom;
-use solana_sdk::signature::{Keypair, Signer};
+use trezoa_sdk::signature::{Keypair, Signer};
 
 mod setup;
 use crate::setup::bootstrap_tests;

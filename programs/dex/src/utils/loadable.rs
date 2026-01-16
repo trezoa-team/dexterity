@@ -5,7 +5,7 @@ use std::{
     mem::size_of,
 };
 
-use anchor_lang::solana_program::{account_info::AccountInfo, msg};
+use anchor_lang::trezoa_program::{account_info::AccountInfo, msg};
 use bytemuck::{Pod, PodCastError};
 
 use crate::error::{DexError, DomainOrProgramError};

@@ -6,14 +6,14 @@ use instruments::{
     state::enums::{InstrumentType, OracleType},
 };
 use rand::Rng;
-use solana_program::{
+use trezoa_program::{
     clock::UnixTimestamp,
     instruction::Instruction,
     pubkey::Pubkey,
     sysvar::{clock::Clock, rent::Rent, Sysvar},
 };
-use solana_program_test::ProgramTestContext;
-use solana_sdk::signature::{Keypair, Signer};
+use trezoa_program_test::ProgramTestContext;
+use trezoa_sdk::signature::{Keypair, Signer};
 
 pub fn settle_derivative_ixs(
     price_oracle: Pubkey,

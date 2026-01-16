@@ -3,7 +3,7 @@ use crate::{
     utils::numeric::Fractional,
     DomainOrProgramError,
 };
-use anchor_lang::solana_program::{
+use anchor_lang::trezoa_program::{
     account_info::AccountInfo,
     msg,
     program_error::ProgramError,
@@ -12,7 +12,7 @@ use anchor_lang::solana_program::{
     sysvar::rent::Rent,
 };
 use spl_associated_token_account::get_associated_token_address;
-use spl_token::state::Account;
+use tpl_token::state::Account;
 
 #[inline(always)]
 pub fn get_rent(rent: &Rent, size: u64, account_info: &AccountInfo) -> u64 {
@@ -23,7 +23,7 @@ pub fn get_rent(rent: &Rent, size: u64, account_info: &AccountInfo) -> u64 {
 
 #[inline(always)]
 pub fn assert_is_ata(ata: &AccountInfo, wallet: &Pubkey, mint: &Pubkey) -> DomainOrProgramResult {
-    assert_owned_by(ata, &spl_token::id())?;
+    assert_owned_by(ata, &tpl_token::id())?;
     let ata_account: Account = assert_initialized(ata)?;
     assert_keys_equal(ata_account.owner, *wallet)?;
     assert_keys_equal(get_associated_token_address(wallet, mint), *ata.key)?;
@@ -145,8 +145,8 @@ pub fn assert_valid_token_account_owner(
     account_info: &AccountInfo,
     owner: &Pubkey,
 ) -> DomainOrProgramResult {
-    let account: spl_token::state::Account =
-        spl_token::state::Account::unpack_unchecked(&account_info.data.borrow())?;
+    let account: tpl_token::state::Account =
+        tpl_token::state::Account::unpack_unchecked(&account_info.data.borrow())?;
     if account.owner != *owner {
         msg!("Wallet account is not owned by the user");
         Err(UtilError::IncorrectOwner.into())

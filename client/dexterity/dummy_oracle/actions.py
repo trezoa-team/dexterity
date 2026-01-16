@@ -1,14 +1,14 @@
 from dexterity.program_ids import ORACLE_PROGRAM_ID
 from dexterity.dummy_oracle.state import OraclePrice, Clock
 
-from solana.keypair import Keypair
-from solana.publickey import PublicKey
-from solana.transaction import Transaction
-from solana.system_program import create_account, CreateAccountParams
+from trezoa.keypair import Keypair
+from trezoa.publickey import PublicKey
+from trezoa.transaction import Transaction
+from trezoa.system_program import create_account, CreateAccountParams
 
 import dexterity.dummy_oracle.instructions as ixs
 
-from dexterity.utils.solana import (
+from dexterity.utils.trezoa import (
     actionify,
     Context,
 )

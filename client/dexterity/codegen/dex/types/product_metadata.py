@@ -7,7 +7,7 @@ from podite import (
     U8,
     pod,
 )
-from solana.publickey import PublicKey
+from trezoa.publickey import PublicKey
 
 # LOCK-END
 

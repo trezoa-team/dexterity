@@ -2,7 +2,7 @@
 
 function deploy() {
     echo "Deploying $1..."
-    solana program deploy target/deploy/$1.so -u $2 --upgrade-authority ~/.config/solana/dexterity_shared.json --keypair ~/.config/solana/dexterity_shared.json
+    trezoa program deploy target/deploy/$1.so -u $2 --upgrade-authority ~/.config/trezoa/dexterity_shared.json --keypair ~/.config/trezoa/dexterity_shared.json
 }
 
 deploy dex $1

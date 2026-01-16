@@ -52,12 +52,12 @@ cargo fmt -p dex instruments dummy-oracle noop-risk-engine dex-macros constant-f
 
 if [[ $REPLACE == 1 ]]
 then 
-    dex_pid=`solana-keygen pubkey target/deploy/dex-keypair.json`
-    inst_pid=`solana-keygen pubkey target/deploy/instruments-keypair.json`
-    nop_pid=`solana-keygen pubkey target/deploy/noop_risk_engine-keypair.json`
-    alpha_pid=`solana-keygen pubkey target/deploy/alpha_risk_engine-keypair.json`
-    dummy_pid=`solana-keygen pubkey target/deploy/dummy_oracle-keypair.json`
-    fees_pid=`solana-keygen pubkey target/deploy/constant_fees-keypair.json`
+    dex_pid=`trezoa-keygen pubkey target/deploy/dex-keypair.json`
+    inst_pid=`trezoa-keygen pubkey target/deploy/instruments-keypair.json`
+    nop_pid=`trezoa-keygen pubkey target/deploy/noop_risk_engine-keypair.json`
+    alpha_pid=`trezoa-keygen pubkey target/deploy/alpha_risk_engine-keypair.json`
+    dummy_pid=`trezoa-keygen pubkey target/deploy/dummy_oracle-keypair.json`
+    fees_pid=`trezoa-keygen pubkey target/deploy/constant_fees-keypair.json`
 
     ## Dex
     fill_program_id $dex_pid programs/dex/src/lib.rs

@@ -3,8 +3,8 @@ from .instruction_tag import InstructionTag
 from dataclasses import dataclass
 from io import BytesIO
 from podite import BYTES_CATALOG
-from solana.publickey import PublicKey
-from solana.transaction import (
+from trezoa.publickey import PublicKey
+from trezoa.transaction import (
     AccountMeta,
     TransactionInstruction,
 )

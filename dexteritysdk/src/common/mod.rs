@@ -8,7 +8,7 @@ use anyhow::anyhow;
 use bincode::Options;
 use derive_more::{Deref, DerefMut, From};
 use serde::{Deserialize, Deserializer, Serialize, Serializer};
-use solana_sdk::signature::{read_keypair_file, Keypair};
+use trezoa_sdk::signature::{read_keypair_file, Keypair};
 
 use instruments::state::derivative_metadata::DerivativeMetadata;
 
@@ -17,7 +17,7 @@ use crate::{SDKError, SDKResult};
 pub mod utils;
 
 pub fn get_local_payer() -> SDKResult<KeypairD> {
-    let keypair = read_keypair_file(&*shellexpand::tilde("~/.config/solana/id.json"))?;
+    let keypair = read_keypair_file(&*shellexpand::tilde("~/.config/trezoa/id.json"))?;
     Ok(keypair.into())
 }
 

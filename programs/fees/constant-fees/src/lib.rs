@@ -1,6 +1,6 @@
 use anchor_lang::prelude::*;
 use borsh::{BorshDeserialize, BorshSerialize};
-use solana_program::{
+use trezoa_program::{
     account_info::{next_account_info, AccountInfo},
     entrypoint,
     entrypoint::ProgramResult,
@@ -19,7 +19,7 @@ use dex::{
         validation::{assert_keys_equal, assert_signer, get_rent},
     },
 };
-use solana_program::{
+use trezoa_program::{
     instruction::{AccountMeta, Instruction},
     program::invoke_signed,
     rent::Rent,
@@ -129,7 +129,7 @@ fn process_find_fees(
     )?;
     assert_keys_equal(trader_state_key, *trader_fee_state.key)?;
 
-    fee_output_register.valid_until = solana_program::clock::Clock::get()?.unix_timestamp + 1; // add an offset to allow skipping fee model calculations
+    fee_output_register.valid_until = trezoa_program::clock::Clock::get()?.unix_timestamp + 1; // add an offset to allow skipping fee model calculations
     fee_output_register.set_taker_fee_bps(fee_model_configuration_acct.taker_fee_bps);
     fee_output_register.set_maker_fee_bps(fee_model_configuration_acct.maker_fee_bps);
 
@@ -158,7 +158,7 @@ fn process_update_fees(
         let size = std::mem::size_of::<FeeConfig>();
         msg!("{}", size);
         invoke_signed(
-            &solana_program::system_instruction::create_account(
+            &trezoa_program::system_instruction::create_account(
                 payer.key,
                 fee_model_config_acct.key,
                 get_rent(&Rent::get()?, size as u64, fee_model_config_acct),
@@ -210,7 +210,7 @@ fn process_initialize_trader_acct(
     assert_keys_equal(*trader_fee_acct.key, trader_fee_acct_key)?;
     let size = std::mem::size_of::<TraderFeeState>();
     invoke_signed(
-        &solana_program::system_instruction::create_account(
+        &trezoa_program::system_instruction::create_account(
             payer.key,
             &trader_fee_acct_key,
             get_rent(&Rent::get()?, size as u64, trader_fee_acct),

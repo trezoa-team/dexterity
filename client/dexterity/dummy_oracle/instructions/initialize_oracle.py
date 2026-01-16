@@ -1,6 +1,6 @@
-from solana.publickey import PublicKey
-from solana.transaction import AccountMeta, TransactionInstruction
-from solana.system_program import SYS_PROGRAM_ID
+from trezoa.publickey import PublicKey
+from trezoa.transaction import AccountMeta, TransactionInstruction
+from trezoa.system_program import SYS_PROGRAM_ID
 from podite import I64, U64, pod
 
 from .common import InstructionCode

@@ -10,7 +10,7 @@ use agnostic_orderbook::{
     critbit::{NodeHandle, Slab},
     state::{MarketState, Side},
 };
-use anchor_lang::solana_program::{
+use anchor_lang::trezoa_program::{
     account_info::AccountInfo, clock::Clock, msg, program_error::ProgramError, pubkey::Pubkey,
 };
 

@@ -1,7 +1,7 @@
 use ::std::cell::Ref;
 use anchor_lang::{
     prelude::*,
-    solana_program::{
+    trezoa_program::{
         log::sol_log_compute_units, msg, program::invoke_signed_unchecked,
         program_pack::IsInitialized, pubkey::Pubkey,
     },
@@ -82,7 +82,7 @@ pub fn process<'info>(
     // TODO: check max amount able to be withdrawn here
 
     trader_risk_group.apply_all_funding(&mut market_product_group)?;
-    let token_transfer_instruction = spl_token::instruction::transfer(
+    let token_transfer_instruction = tpl_token::instruction::transfer(
         &accts.token_program.key(),
         &accts.market_product_group_vault.key(),
         &accts.user_token_account.key(),

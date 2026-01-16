@@ -1,16 +1,16 @@
 from typing import List
 from dexterity.program_ids import DEX_PROGRAM_ID, INSTRUMENTS_PROGRAM_ID
 
-from solana.keypair import Keypair
-from solana.publickey import PublicKey
-from solana.transaction import Transaction
+from trezoa.keypair import Keypair
+from trezoa.publickey import PublicKey
+from trezoa.transaction import Transaction
 
 import dexterity.instruments.instructions as ixs
 
 from dexterity.codegen.dex.types import Fractional
 from dexterity.codegen.instruments import instructions as iixs
 from dexterity.codegen.instruments import types as its
-from dexterity.utils.solana import (
+from dexterity.utils.trezoa import (
     actionify,
     Context,
 )

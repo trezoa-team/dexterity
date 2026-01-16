@@ -9,7 +9,7 @@ use crate::{
 };
 use anchor_lang::{
     prelude::*,
-    solana_program::{msg, pubkey::Pubkey},
+    trezoa_program::{msg, pubkey::Pubkey},
 };
 
 pub fn process<'a, 'b, 'c, 'info>(

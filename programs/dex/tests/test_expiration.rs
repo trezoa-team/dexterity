@@ -11,8 +11,8 @@ use dexteritysdk::{
     state::SDKProduct,
 };
 use itertools::Itertools;
-use solana_program::pubkey::Pubkey;
-use solana_sdk::signature::Signer;
+use trezoa_program::pubkey::Pubkey;
+use trezoa_sdk::signature::Signer;
 
 use dexteritysdk::bootstrap::setup_combo;
 

@@ -1,9 +1,9 @@
 use anchor_lang::{InstructionData, ToAccountMetas};
-use solana_program::{
+use trezoa_program::{
     instruction::Instruction, pubkey::Pubkey, system_instruction::create_account,
 };
-use solana_program_test::ProgramTestContext;
-use solana_sdk::signature::{Keypair, Signer};
+use trezoa_program_test::ProgramTestContext;
+use trezoa_sdk::signature::{Keypair, Signer};
 
 use dex::{accounts, instruction, state::trader_risk_group::*};
 
@@ -41,7 +41,7 @@ pub fn initialize_trader_risk_group_ixs(
             trader_risk_state_acct,
             trader_fee_state_acct,
             risk_engine_program,
-            system_program: solana_program::system_program::id(),
+            system_program: trezoa_program::system_program::id(),
         }
         .to_account_metas(None),
     };

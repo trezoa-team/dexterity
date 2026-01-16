@@ -3,7 +3,7 @@ from dexterity.codegen.dex.types.fractional import Fractional
 from dexterity.codegen.instruments.types.instrument_type import InstrumentType
 from dexterity.codegen.instruments.types.oracle_type import OracleType
 from podite import pod
-from solana.publickey import PublicKey
+from trezoa.publickey import PublicKey
 from solmate.dtypes import UnixTimestamp
 
 # LOCK-END

@@ -1,12 +1,12 @@
 from ctypes import Union
-from solana.transaction import AccountMeta, TransactionInstruction
+from trezoa.transaction import AccountMeta, TransactionInstruction
 from typing import Optional
 
-from solana.publickey import PublicKey
-from solana.transaction import Transaction
+from trezoa.publickey import PublicKey
+from trezoa.transaction import Transaction
 import dexterity.program_ids as pids
 from podite import pod, U64
-from dexterity.utils.solana import (
+from dexterity.utils.trezoa import (
     actionify
 )
 from dexterity.dex.actions import RISK_CONFIG_LAYOUT 

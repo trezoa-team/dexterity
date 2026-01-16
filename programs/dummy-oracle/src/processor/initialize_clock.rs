@@ -1,7 +1,7 @@
 use crate::utils::{assert_keys_equal, assert_signer, get_rent};
 use bincode;
 use borsh::{BorshDeserialize, BorshSerialize};
-use solana_program::{
+use trezoa_program::{
     account_info::{next_account_info, AccountInfo},
     entrypoint::ProgramResult,
     msg,

@@ -2,7 +2,7 @@
 from dexterity.codegen.dex.types.account_tag import AccountTag
 from dexterity.codegen.dex.types.fractional import Fractional
 from podite import pod
-from solana.publickey import PublicKey
+from trezoa.publickey import PublicKey
 from solmate.dtypes import Usize
 
 # LOCK-END

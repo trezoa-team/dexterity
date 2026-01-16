@@ -1,7 +1,7 @@
-from solana.publickey import PublicKey
-from solana.transaction import AccountMeta, TransactionInstruction
+from trezoa.publickey import PublicKey
+from trezoa.transaction import AccountMeta, TransactionInstruction
 from podite import I64, U64, pod
-from solana.system_program import SYS_PROGRAM_ID
+from trezoa.system_program import SYS_PROGRAM_ID
 
 from .common import InstructionCode
 from dexterity.program_ids import ORACLE_PROGRAM_ID

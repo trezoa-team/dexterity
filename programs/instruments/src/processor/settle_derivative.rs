@@ -20,7 +20,7 @@ use dex::{
         validation::{assert, assert_keys_equal},
     },
 };
-use solana_program::{
+use trezoa_program::{
     entrypoint::ProgramResult, program_error::ProgramError, sysvar, sysvar::clock::Clock,
 };
 use std::cell::Ref;

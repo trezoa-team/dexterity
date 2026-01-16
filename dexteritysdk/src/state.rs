@@ -3,10 +3,10 @@ use std::{borrow::Borrow, cell::RefCell, marker::PhantomData, sync::Arc};
 use agnostic_orderbook::state::SelfTradeBehavior;
 use anchor_lang::Key;
 use async_trait::async_trait;
-use solana_client::{rpc_client::RpcClient, thin_client::ThinClient};
-use solana_program::{hash::Hash, instruction::Instruction, message::Message, pubkey::Pubkey};
-use solana_program_test::BanksClient;
-use solana_sdk::{
+use trezoa_client::{rpc_client::RpcClient, thin_client::ThinClient};
+use trezoa_program::{hash::Hash, instruction::Instruction, message::Message, pubkey::Pubkey};
+use trezoa_program_test::BanksClient;
+use trezoa_sdk::{
     client::{Client, SyncClient},
     commitment_config::CommitmentLevel,
     signature::{Keypair, Signature, Signer},

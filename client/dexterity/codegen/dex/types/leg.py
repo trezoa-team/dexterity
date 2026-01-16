@@ -3,7 +3,7 @@ from podite import (
     I64,
     pod,
 )
-from solana.publickey import PublicKey
+from trezoa.publickey import PublicKey
 from solmate.dtypes import Usize
 
 # LOCK-END

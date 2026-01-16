@@ -4,7 +4,7 @@ use dex::{
     error::UtilError,
     utils::validation::{assert, assert_keys_equal},
 };
-use solana_program::entrypoint::ProgramResult;
+use trezoa_program::entrypoint::ProgramResult;
 
 pub fn process(ctx: Context<CloseDerivativeAccount>) -> ProgramResult {
     let accts = ctx.accounts;

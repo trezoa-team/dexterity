@@ -1,7 +1,7 @@
 #![allow(non_snake_case)]
 
 use agnostic_orderbook::state::Side;
-use anchor_lang::solana_program::sysvar::clock::Clock;
+use anchor_lang::trezoa_program::sysvar::clock::Clock;
 use borsh::BorshDeserialize;
 use dexteritysdk::{
     common::{utils::*, KeypairD},
@@ -47,7 +47,7 @@ async fn test_dummy_oracle() {
         &ctx.client,
         ctx.dummy_oracle_program_id,
         &ctx.payer,
-        solana_program::system_program::id(),
+        trezoa_program::system_program::id(),
         1,
         2,
         3,
@@ -73,7 +73,7 @@ async fn test_dummy_oracle() {
         &ctx.client,
         ctx.dummy_oracle_program_id,
         &ctx.payer,
-        solana_program::system_program::id(),
+        trezoa_program::system_program::id(),
         20,
         6,
     )
@@ -94,7 +94,7 @@ async fn test_dummy_oracle() {
         &ctx.client,
         ctx.dummy_oracle_program_id,
         &ctx.payer,
-        solana_program::system_program::id(),
+        trezoa_program::system_program::id(),
         -20,
         7,
     )
@@ -117,7 +117,7 @@ async fn test_dummy_oracle() {
         &ctx.client,
         ctx.dummy_oracle_program_id,
         &KeypairD::new(),
-        solana_program::system_program::id(),
+        trezoa_program::system_program::id(),
         clock.slot + 1,
         clock.epoch_start_timestamp + 2,
         clock.epoch + 3,
@@ -135,7 +135,7 @@ async fn test_dummy_oracle() {
         &ctx.client,
         ctx.dummy_oracle_program_id,
         &KeypairD::new(),
-        solana_program::system_program::id(),
+        trezoa_program::system_program::id(),
         -20,
         7,
     )
@@ -301,7 +301,7 @@ async fn test_funding() {
         &ctx.client,
         ctx.dummy_oracle_program_id,
         &ctx.payer,
-        solana_program::system_program::id(),
+        trezoa_program::system_program::id(),
         oracle_price,
         oracle_decimals,
     )
@@ -314,7 +314,7 @@ async fn test_funding() {
             &ctx.client,
             ctx.dummy_oracle_program_id,
             &ctx.payer,
-            solana_program::system_program::id(),
+            trezoa_program::system_program::id(),
             102,
             102,
             102,
@@ -339,7 +339,7 @@ async fn test_funding() {
             &ctx.client,
             ctx.dummy_oracle_program_id,
             &ctx.payer,
-            solana_program::system_program::id(),
+            trezoa_program::system_program::id(),
             103,
             103,
             103,
@@ -366,7 +366,7 @@ async fn test_funding() {
             &ctx.client,
             ctx.dummy_oracle_program_id,
             &ctx.payer,
-            solana_program::system_program::id(),
+            trezoa_program::system_program::id(),
             1000,
             1000,
             1000,

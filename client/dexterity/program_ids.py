@@ -1,9 +1,9 @@
 import os
 
-import solana.system_program
-import solana.sysvar
+import trezoa.system_program
+import trezoa.sysvar
 import spl.token.constants
-from solana.publickey import PublicKey
+from trezoa.publickey import PublicKey
 
 # from solmate import set_pid_by_protocol_name
 
@@ -14,9 +14,9 @@ try:
 except:
     programs = {}
 
-RENT_PROGRAM_ID = solana.sysvar.SYSVAR_RENT_PUBKEY
-CLOCK_PROGRAM_ID = solana.sysvar.SYSVAR_CLOCK_PUBKEY
-SYSTEM_PROGRAM_ID = solana.system_program.SYS_PROGRAM_ID
+RENT_PROGRAM_ID = trezoa.sysvar.SYSVAR_RENT_PUBKEY
+CLOCK_PROGRAM_ID = trezoa.sysvar.SYSVAR_CLOCK_PUBKEY
+SYSTEM_PROGRAM_ID = trezoa.system_program.SYS_PROGRAM_ID
 SPL_TOKEN_PROGRAM_ID = spl.token.constants.TOKEN_PROGRAM_ID
 
 DEX_PROGRAM_ID = PublicKey(os.environ.get("DEX", programs.get("dex", "")))

@@ -6,8 +6,8 @@ use dex::{
     utils::numeric::Fractional,
 };
 use futures::future::join_all;
-use solana_program::{instruction::Instruction, pubkey::Pubkey};
-use solana_sdk::{
+use trezoa_program::{instruction::Instruction, pubkey::Pubkey};
+use trezoa_sdk::{
     signature::{Keypair, Signature, SignerError},
     signer::Signer,
 };
@@ -110,7 +110,7 @@ impl SDKTrader {
         deposit_funds(
             &ctx.client,
             ctx.dex_program_id,
-            spl_token::ID,
+            tpl_token::ID,
             &trader.keypair,
             trader_wallet,
             trader.account,

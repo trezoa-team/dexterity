@@ -1,6 +1,6 @@
 use anchor_lang::{
     prelude::*,
-    solana_program::{
+    trezoa_program::{
         log::sol_log_compute_units, program::invoke_signed_unchecked, program_pack::IsInitialized,
         pubkey::Pubkey,
     },

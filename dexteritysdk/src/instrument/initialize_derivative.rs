@@ -5,15 +5,15 @@ use instruments::{
     accounts,
     state::enums::{InstrumentType, OracleType},
 };
-use solana_program::{
+use trezoa_program::{
     clock::UnixTimestamp,
     instruction::Instruction,
     pubkey::Pubkey,
     system_program,
     sysvar::{clock::Clock, rent::Rent, Sysvar},
 };
-use solana_program_test::ProgramTestContext;
-use solana_sdk::signature::{Keypair, Signer};
+use trezoa_program_test::ProgramTestContext;
+use trezoa_sdk::signature::{Keypair, Signer};
 
 pub fn get_derivative_key(
     price_oracle: Pubkey,

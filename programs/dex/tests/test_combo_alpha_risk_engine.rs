@@ -1,11 +1,11 @@
 #![allow(non_snake_case)]
 use agnostic_orderbook::state::Side;
-use anchor_lang::{solana_program::program_pack::Pack, Key};
+use anchor_lang::{trezoa_program::program_pack::Pack, Key};
 use dex::utils::numeric::Fractional;
 use dexteritysdk::{bootstrap::setup_combo, common::utils::*};
 use itertools::Itertools;
 
-use solana_sdk::signature::Signer;
+use trezoa_sdk::signature::Signer;
 
 mod setup;
 use crate::setup::*;
@@ -115,7 +115,7 @@ async fn test_combo_test() -> SDKResult {
 
     let account = ctx.client.get_account(trader_1.wallet).await?;
     let token_account =
-        spl_token::state::Account::unpack_unchecked(account.data.as_slice()).unwrap();
+        tpl_token::state::Account::unpack_unchecked(account.data.as_slice()).unwrap();
     assert_eq!(token_account.owner, trader_1.keypair.pubkey());
 
     trader_1.deposit(ctx, COLLATERAL).await.unwrap();

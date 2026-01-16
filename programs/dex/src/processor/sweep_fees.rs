@@ -1,6 +1,6 @@
 use anchor_lang::{
     prelude::*,
-    solana_program::{
+    trezoa_program::{
         log::sol_log_compute_units, program::invoke_signed, program_pack::IsInitialized,
     },
 };
@@ -51,7 +51,7 @@ pub fn process(ctx: Context<SweepFees>) -> DomainOrProgramResult {
     let vault_key = Pubkey::create_program_address(vault_seeds, ctx.program_id)?;
     assert_keys_equal(vault_key, accts.market_product_group_vault.key())?;
 
-    let token_transfer_instruction = spl_token::instruction::transfer(
+    let token_transfer_instruction = tpl_token::instruction::transfer(
         &accts.token_program.key(),
         &accts.market_product_group_vault.key(),
         &accts.fee_collector_token_account.key(),

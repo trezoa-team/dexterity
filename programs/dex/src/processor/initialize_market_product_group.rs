@@ -1,6 +1,6 @@
 use anchor_lang::{
     prelude::*,
-    solana_program::{
+    trezoa_program::{
         log::sol_log_params,
         msg,
         program::invoke_signed,
@@ -21,7 +21,7 @@ use crate::{
     InitializeMarketProductGroup, InitializeMarketProductGroupParams,
 };
 
-const TOKEN_ACCOUNT_SIZE: u64 = spl_token::state::Account::LEN as u64;
+const TOKEN_ACCOUNT_SIZE: u64 = tpl_token::state::Account::LEN as u64;
 
 pub fn validate(ctx: &Context<InitializeMarketProductGroup>) -> DomainOrProgramResult {
     assert_keys_equal(
@@ -77,7 +77,7 @@ pub fn process(
 
     msg!("Initializing the market collateral vault");
     invoke_signed(
-        &spl_token::instruction::initialize_account2(
+        &tpl_token::instruction::initialize_account2(
             accts.token_program.key,
             accts.market_product_group_vault.key,
             &accts.vault_mint.key(),

@@ -1,7 +1,7 @@
 use crate::error::{DexError, DomainOrProgramResult};
 use anchor_lang::{
     prelude::*,
-    solana_program::{msg, program_error::ProgramError},
+    trezoa_program::{msg, program_error::ProgramError},
 };
 
 use crate::utils::{

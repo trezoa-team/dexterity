@@ -5,7 +5,7 @@ use crate::{
 };
 use anchor_lang::prelude::*;
 use dex::utils::validation::assert;
-use solana_program::{
+use trezoa_program::{
     entrypoint::ProgramResult, program_error::ProgramError, sysvar::clock::Clock,
 };
 

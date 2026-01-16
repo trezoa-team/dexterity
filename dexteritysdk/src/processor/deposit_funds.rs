@@ -3,9 +3,9 @@ use crate::common::utils::*;
 use crate::{sdk_client::SDKClient, KeypairD};
 use anchor_lang::{InstructionData, ToAccountMetas};
 use dex::{accounts, instruction, utils::numeric::Fractional};
-use solana_program::{instruction::Instruction, pubkey::Pubkey};
-use solana_program_test::ProgramTestContext;
-use solana_sdk::signature::{Keypair, Signer};
+use trezoa_program::{instruction::Instruction, pubkey::Pubkey};
+use trezoa_program_test::ProgramTestContext;
+use trezoa_sdk::signature::{Keypair, Signer};
 
 pub fn deposit_funds_ixs(
     user: Pubkey,
@@ -17,7 +17,7 @@ pub fn deposit_funds_ixs(
 ) -> Vec<Instruction> {
     let params = dex::DepositFundsParams { quantity };
     let account_metas = accounts::DepositFunds {
-        token_program: spl_token::ID,
+        token_program: tpl_token::ID,
         user,
         user_token_account,
         trader_risk_group,
@@ -35,7 +35,7 @@ pub fn deposit_funds_ixs(
 pub async fn deposit_funds(
     client: &SDKClient,
     dex_program_id: Pubkey,
-    spl_token_program_id: Pubkey,
+    tpl_token_program_id: Pubkey,
     user: &KeypairD,
     user_wallet: Pubkey,
     user_trader_risk_group: Pubkey,

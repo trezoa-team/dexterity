@@ -10,7 +10,7 @@ use crate::state::{
 use anchor_lang::prelude::*;
 use bytemuck::{Pod, Zeroable};
 use dex::utils::numeric::Fractional;
-use solana_program::{
+use trezoa_program::{
     account_info::AccountInfo,
     clock::UnixTimestamp,
     entrypoint::ProgramResult,

@@ -2,7 +2,7 @@ import hashlib
 from typing import Optional, Tuple
 
 from podite import U8
-from solana.publickey import PublicKey
+from trezoa.publickey import PublicKey
 
 from dexterity import program_ids as pids
 from dexterity.utils.aob.state import MarketState

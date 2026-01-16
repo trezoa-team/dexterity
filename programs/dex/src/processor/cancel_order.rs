@@ -3,7 +3,7 @@ use bonfida_utils::InstructionsAccount;
 
 use anchor_lang::{
     prelude::*,
-    solana_program::{
+    trezoa_program::{
         msg,
         program::invoke_signed_unchecked,
         program_error::ProgramError,

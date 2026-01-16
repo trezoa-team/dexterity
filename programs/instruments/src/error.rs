@@ -1,6 +1,6 @@
 use dex::error::DomainOrProgramError;
 use num_derive::FromPrimitive;
-use solana_program::{decode_error::DecodeError, program_error::ProgramError};
+use trezoa_program::{decode_error::DecodeError, program_error::ProgramError};
 use thiserror::Error;
 
 #[derive(Error, Debug, Copy, Clone, FromPrimitive, PartialEq)]

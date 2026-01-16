@@ -1,5 +1,5 @@
 use crate::error::UtilError;
-use solana_program::{
+use trezoa_program::{
     account_info::AccountInfo,
     entrypoint::ProgramResult,
     msg,
@@ -10,7 +10,7 @@ use solana_program::{
     sysvar::rent::Rent,
 };
 use spl_associated_token_account::get_associated_token_address;
-use spl_token::state::Account;
+use tpl_token::state::Account;
 
 pub fn get_rent(rent: &Rent, size: u64, account_info: &AccountInfo) -> u64 {
     rent.minimum_balance(size as usize)
@@ -19,7 +19,7 @@ pub fn get_rent(rent: &Rent, size: u64, account_info: &AccountInfo) -> u64 {
 }
 
 pub fn assert_is_ata(ata: &AccountInfo, wallet: &Pubkey, mint: &Pubkey) -> ProgramResult {
-    assert_owned_by(ata, &spl_token::id())?;
+    assert_owned_by(ata, &tpl_token::id())?;
     let ata_account: Account = assert_initialized(ata)?;
     assert_keys_equal(ata_account.owner, *wallet)?;
     assert_keys_equal(get_associated_token_address(wallet, mint), *ata.key)?;

@@ -1,6 +1,6 @@
 use anchor_lang::{
     prelude::*,
-    solana_program::{
+    trezoa_program::{
         entrypoint::ProgramResult,
         msg,
         program::{invoke_signed_unchecked, invoke_unchecked},

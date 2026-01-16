@@ -1,7 +1,7 @@
 import struct
 
-from solana.publickey import PublicKey
-from solana.transaction import AccountMeta, TransactionInstruction
+from trezoa.publickey import PublicKey
+from trezoa.transaction import AccountMeta, TransactionInstruction
 from dexterity.program_ids import AOB_PROGRAM_ID
 
 

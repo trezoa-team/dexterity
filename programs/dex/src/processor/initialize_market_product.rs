@@ -15,7 +15,7 @@ use crate::{
 };
 use anchor_lang::{
     prelude::*,
-    solana_program::{
+    trezoa_program::{
         msg,
         program_pack::IsInitialized,
         pubkey::Pubkey,

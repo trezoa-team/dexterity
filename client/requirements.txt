@@ -920,7 +920,7 @@ six==1.16.0; (python_version >= "2.7" and python_full_version < "3.0.0") or (pyt
 sniffio==1.2.0; python_version >= "3.5" \
     --hash=sha256:471b71698eac1c2112a40ce2752bb2f4a4814c22a54a3eed3676bc0f5ca9f663 \
     --hash=sha256:c4666eecec1d3f50960c6bdf61ab7bc350648da6c126e3cf6898d8cd4ddcd3de
-solana==0.19.1; python_version >= "3.7" and python_version < "4.0" \
+trezoa==0.19.1; python_version >= "3.7" and python_version < "4.0" \
     --hash=sha256:5d205a85ea38fe011295dc22e9add8dff33f5509e0374c15d826d0a1e03310e1 \
     --hash=sha256:70beb10485db01b04536521520c0edc8598a1c972a08e4aecd3bf1830c7637ac
 solmate @ git+ssh://git@github.com/nimily/solmate.git@jhow/use-u64-for-enums ; python_version >= "3.9" and python_version < "4.0"

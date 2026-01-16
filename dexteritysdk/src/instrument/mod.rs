@@ -1,5 +1,5 @@
-use solana_program::pubkey::Pubkey;
-use solana_sdk::{signature::Keypair, signer::Signer};
+use trezoa_program::pubkey::Pubkey;
+use trezoa_sdk::{signature::Keypair, signer::Signer};
 
 use dex::utils::numeric::Fractional;
 

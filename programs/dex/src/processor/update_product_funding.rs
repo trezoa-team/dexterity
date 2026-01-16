@@ -1,6 +1,6 @@
 use anchor_lang::{
     prelude::*,
-    solana_program::{msg, program_pack::IsInitialized},
+    trezoa_program::{msg, program_pack::IsInitialized},
 };
 
 use crate::{

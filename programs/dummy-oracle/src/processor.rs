@@ -1,7 +1,7 @@
 #![allow(unused_imports)]
 use crate::instruction::DummyInstruction;
 use borsh::{BorshDeserialize, BorshSerialize};
-use solana_program::{
+use trezoa_program::{
     account_info::AccountInfo,
     entrypoint::ProgramResult,
     instruction::{AccountMeta, Instruction},

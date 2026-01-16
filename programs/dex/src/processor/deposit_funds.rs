@@ -1,6 +1,6 @@
 use anchor_lang::{
     prelude::*,
-    solana_program::{
+    trezoa_program::{
         program::invoke_signed, program_error::ProgramError, program_pack::IsInitialized,
         pubkey::Pubkey,
     },
@@ -14,7 +14,7 @@ use crate::{
 
 fn validate(accts: &DepositFunds) -> DomainOrProgramResult {
     let trader_risk_group = accts.trader_risk_group.load()?;
-    assert_keys_equal(accts.token_program.key(), spl_token::ID)?;
+    assert_keys_equal(accts.token_program.key(), tpl_token::ID)?;
     assert(
         trader_risk_group.is_initialized(),
         UtilError::AccountUninitialized,
@@ -47,7 +47,7 @@ pub fn process(ctx: Context<DepositFunds>, params: DepositFundsParams) -> Domain
 
     // check_funds(token_quantity)?;
 
-    let token_transfer_instruction = spl_token::instruction::transfer(
+    let token_transfer_instruction = tpl_token::instruction::transfer(
         accts.token_program.key,
         &accts.user_token_account.key(),
         &accts.market_product_group_vault.key(),

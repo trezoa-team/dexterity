@@ -2,7 +2,7 @@ from enum import IntEnum
 from dataclasses import field
 from typing import Union, List
 
-from solana.publickey import PublicKey
+from trezoa.publickey import PublicKey
 
 from dexterity.utils import Usize
 from podite import (

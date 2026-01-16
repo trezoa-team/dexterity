@@ -1,4 +1,4 @@
-from solana.publickey import PublicKey
+from trezoa.publickey import PublicKey
 from podite import U64, pod, FixedLenArray
 
 

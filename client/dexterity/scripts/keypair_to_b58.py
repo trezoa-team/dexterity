@@ -1,7 +1,7 @@
 import argparse
 import json
 from base58 import b58encode as b58e
-from solana.keypair import Keypair
+from trezoa.keypair import Keypair
 
 def main():
     ap = argparse.ArgumentParser()

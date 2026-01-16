@@ -6,7 +6,7 @@ use dex::{
     },
     utils::{loadable::Loadable, numeric::ZERO_FRAC, validation::assert_keys_equal},
 };
-use solana_program::{
+use trezoa_program::{
     account_info::AccountInfo, declare_id, entrypoint::ProgramResult, pubkey::Pubkey,
 };
 

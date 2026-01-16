@@ -3,7 +3,7 @@
 use agnostic_orderbook::state::{SelfTradeBehavior, Side};
 use anchor_lang::{
     prelude::*,
-    solana_program::{
+    trezoa_program::{
         account_info::AccountInfo,
         entrypoint::ProgramResult,
         instruction::{AccountMeta, Instruction},

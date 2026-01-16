@@ -7,12 +7,12 @@ from typing import Optional, Dict
 from typing import Union, Tuple, Iterable
 
 import base58
-from solana.keypair import Keypair
-from solana.publickey import PublicKey
-from solana.rpc.api import Client
-from solana.rpc.commitment import Confirmed
-from solana.rpc.types import TxOpts
-from solana.transaction import AccountMeta, Transaction, TransactionInstruction
+from trezoa.keypair import Keypair
+from trezoa.publickey import PublicKey
+from trezoa.rpc.api import Client
+from trezoa.rpc.commitment import Confirmed
+from trezoa.rpc.types import TxOpts
+from trezoa.transaction import AccountMeta, Transaction, TransactionInstruction
 
 DEX_LOG_PREFIX = "Program log: dex-log "
 

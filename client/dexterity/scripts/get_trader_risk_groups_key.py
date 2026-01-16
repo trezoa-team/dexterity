@@ -1,8 +1,8 @@
 import argparse
 from base64 import b64decode as b64d
 from base58 import b58encode as b58e
-from solana.rpc.api import Client
-from solana.rpc.types import MemcmpOpts
+from trezoa.rpc.api import Client
+from trezoa.rpc.types import MemcmpOpts
 
 
 def main():
@@ -14,12 +14,12 @@ def main():
     args = ap.parse_args()
 
     urls = {
-        "devnet": "https://api.devnet.solana.com",
-        "dev": "https://api.devnet.solana.com",
+        "devnet": "https://api.devnet.trezoa.com",
+        "dev": "https://api.devnet.trezoa.com",
         "localnet": "https://localhost:8899/",
         "local": "https://localhost:8899/",
-        "mainnet": "https://api.mainnet-beta.solana.com/",
-        "mainnet-beta": "https://api.mainnet-beta.solana.com/",
+        "mainnet": "https://api.mainnet-beta.trezoa.com/",
+        "mainnet-beta": "https://api.mainnet-beta.trezoa.com/",
     }
 
     client = Client(urls[args.network])

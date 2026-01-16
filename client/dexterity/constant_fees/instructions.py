@@ -1,6 +1,6 @@
 from podite import U8, I32, pod, Enum
-from solana.publickey import PublicKey
-from solana.transaction import AccountMeta, TransactionInstruction
+from trezoa.publickey import PublicKey
+from trezoa.transaction import AccountMeta, TransactionInstruction
 
 
 @pod

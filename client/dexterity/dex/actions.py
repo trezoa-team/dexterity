@@ -1,13 +1,13 @@
 from typing import Any, Optional, Tuple, List
 
-import solana.system_program as sp
-import solana.sysvar
+import trezoa.system_program as sp
+import trezoa.sysvar
 from podite import pod, U64, U128, Option, I8, Static
-from solana.keypair import Keypair
-from solana.publickey import PublicKey
-from solana.rpc import types
-from solana.rpc.commitment import Confirmed
-from solana.transaction import Transaction, AccountMeta
+from trezoa.keypair import Keypair
+from trezoa.publickey import PublicKey
+from trezoa.rpc import types
+from trezoa.rpc.commitment import Confirmed
+from trezoa.transaction import Transaction, AccountMeta
 from spl.token.constants import MINT_LEN
 from spl.token.instructions import (
     TOKEN_PROGRAM_ID,
@@ -29,7 +29,7 @@ from dexterity.utils import create_market_aob_ix
 from dexterity.utils.aob.state.base import SelfTradeBehavior, Side
 from dexterity.utils.aob.state.market_state import MarketState
 from dexterity.utils.aob.state.slab import Slab
-from dexterity.utils.solana import (
+from dexterity.utils.trezoa import (
     actionify,
     Context,
     fetch_account_details,
@@ -203,7 +203,7 @@ def init_market_product_group(
             fee_output_register=fee_output_register,
             risk_model_configuration_acct=risk_model_configuration_acct,
             risk_output_register=risk_output_register,
-            sysvar_rent=solana.sysvar.SYSVAR_RENT_PUBKEY,
+            sysvar_rent=trezoa.sysvar.SYSVAR_RENT_PUBKEY,
             params=params,
         ),
     )
@@ -270,7 +270,7 @@ def create_fee_register(
     )
 
 
-from solana import system_program
+from trezoa import system_program
 
 
 @actionify(post_process=_post_create_risk_config)

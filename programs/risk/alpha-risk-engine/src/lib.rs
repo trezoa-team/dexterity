@@ -2,7 +2,7 @@ use std::ops::Deref;
 
 use anchor_lang::prelude::*;
 use borsh::{BorshDeserialize, BorshSerialize};
-use solana_program::{
+use trezoa_program::{
     account_info::AccountInfo, declare_id, entrypoint::ProgramResult, program_error::ProgramError,
     program_pack::IsInitialized, pubkey::Pubkey,
 };

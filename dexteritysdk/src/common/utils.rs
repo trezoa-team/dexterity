@@ -7,12 +7,12 @@ use std::{
 use anchor_client::ClientError;
 use anchor_lang::Key;
 use anyhow::{anyhow, Error};
-use solana_program::{
+use trezoa_program::{
     instruction::Instruction, message::Message, program_error::ProgramError,
     program_option::COption, program_pack::Pack, pubkey::Pubkey, sysvar::rent::Rent,
 };
-use solana_program_test::{BanksClientError, ProgramTest, ProgramTestContext};
-use solana_sdk::{
+use trezoa_program_test::{BanksClientError, ProgramTest, ProgramTestContext};
+use trezoa_sdk::{
     account::{Account, ReadableAccount},
     client::{Client, SyncClient},
     signature::{Keypair, Signer},
@@ -21,7 +21,7 @@ use solana_sdk::{
     transport::TransportError,
 };
 use spl_associated_token_account::{create_associated_token_account, get_associated_token_address};
-use spl_token::{instruction, state::Mint};
+use tpl_token::{instruction, state::Mint};
 use thiserror::Error;
 use tokio::task::spawn_blocking;
 
@@ -49,8 +49,8 @@ pub enum SDKError {
     PublicKeyMismatch,
     #[error("Action requires admin key")]
     RequiresAdmin,
-    #[error("Solana client error")]
-    SolanaClient(#[from] solana_client::client_error::ClientError),
+    #[error("Trezoa client error")]
+    TrezoaClient(#[from] trezoa_client::client_error::ClientError),
     #[error("Some other error")]
     Other(#[from] anyhow::Error),
     #[error("Transaction Failed")]
@@ -90,29 +90,29 @@ impl From<std::io::Error> for SDKError {
 }
 
 pub fn log_disable() {
-    solana_logger::setup_with_default(
-        "solana_rbpf::vm=error,\
-         solana_program_runtime=error,\
-         solana_program_runtime::message_processor=error,\
-         solana_program_test=error",
+    trezoa_logger::setup_with_default(
+        "trezoa_rbpf::vm=error,\
+         trezoa_program_runtime=error,\
+         trezoa_program_runtime::message_processor=error,\
+         trezoa_program_test=error",
     )
 }
 
 pub fn log_enable() {
-    solana_logger::setup_with_default(
-        "solana_rbpf::vm=error,\
-         solana_program_runtime=debug,\
-         solana_runtime::system_instruction_processor=debug,\
-         solana_program_test=error",
+    trezoa_logger::setup_with_default(
+        "trezoa_rbpf::vm=error,\
+         trezoa_program_runtime=debug,\
+         trezoa_runtime::system_instruction_processor=debug,\
+         trezoa_program_test=error",
     )
 }
 
 pub fn log_default() {
-    solana_logger::setup_with_default(
-        "solana_rbpf::vm=warn,\
-         solana_program_runtime::message_processor=info,\
-         solana_runtime::system_instruction_processor=error,\
-         solana_program_test=info",
+    trezoa_logger::setup_with_default(
+        "trezoa_rbpf::vm=warn,\
+         trezoa_program_runtime::message_processor=info,\
+         trezoa_runtime::system_instruction_processor=error,\
+         trezoa_program_test=info",
     );
 }
 
@@ -147,7 +147,7 @@ pub async fn create_fee_program_config_acct(
                 client.payer.pubkey(),
                 *fee_acct_global_config,
                 market_product_group,
-                solana_program::system_program::id(),
+                trezoa_program::system_program::id(),
                 constant_fees::UpdateFeesParams {
                     maker_fee_bps: 0,
                     taker_fee_bps: 0,
@@ -170,10 +170,10 @@ pub async fn create_mint2(
             &pool_mint.pubkey(),
             client.rent_exempt(Mint::LEN) as u64,
             Mint::LEN as u64,
-            &spl_token::ID,
+            &tpl_token::ID,
         ),
         instruction::initialize_mint(
-            &spl_token::ID,
+            &tpl_token::ID,
             &pool_mint.pubkey(),
             &mint_authority.pubkey(),
             None,
@@ -197,7 +197,7 @@ pub async fn mint_to(
     client
         .sign_send_instructions(
             vec![instruction::mint_to(
-                &spl_token::ID,
+                &tpl_token::ID,
                 mint,
                 account,
                 &mint_authority.pubkey(),
@@ -215,7 +215,7 @@ pub async fn create_token_account(
     pool_mint: &Pubkey,
     owner: &Pubkey,
 ) -> std::result::Result<Pubkey, SDKError> {
-    let account_rent = client.rent_exempt(spl_token::state::Account::LEN);
+    let account_rent = client.rent_exempt(tpl_token::state::Account::LEN);
     let ix = create_associated_token_account(&client.payer.pubkey(), &owner, pool_mint);
     let ata = get_associated_token_address(&owner, &pool_mint);
     match client.get_account(ata).await {
@@ -248,7 +248,7 @@ pub async fn transfer(
 
     let transaction = Transaction::new_signed_with_payer(
         &[instruction::transfer(
-            &spl_token::ID,
+            &tpl_token::ID,
             source,
             destination,
             &authority.pubkey(),

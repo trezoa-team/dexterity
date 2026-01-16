@@ -13,12 +13,12 @@ use anchor_client::{Client as AnchorClient, Cluster, Cluster::Localnet};
 use anchor_lang::Key;
 use anyhow::anyhow;
 use arrayvec::ArrayVec;
-use solana_program::{
+use trezoa_program::{
     account_info::AccountInfo, clock::UnixTimestamp, program_pack::Pack, pubkey::Pubkey,
     system_instruction::create_account, system_program,
 };
-use solana_program_test::{ProgramTest, ProgramTestContext};
-use solana_sdk::{
+use trezoa_program_test::{ProgramTest, ProgramTestContext};
+use trezoa_sdk::{
     account::Account,
     client::{Client, SyncClient},
     commitment_config::CommitmentConfig,
@@ -240,7 +240,7 @@ impl SDKContext {
 
 async fn load_order_book(orderbook: Pubkey, client: &SDKClient) -> SDKResult<MarketState> {
     let acct = &mut (orderbook, client.get_account(orderbook).await?);
-    let info = solana_sdk::account_info::IntoAccountInfo::into_account_info(acct);
+    let info = trezoa_sdk::account_info::IntoAccountInfo::into_account_info(acct);
     let market_state = MarketState::get(&info)?;
     Ok(*market_state)
 }

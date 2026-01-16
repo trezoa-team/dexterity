@@ -5,7 +5,7 @@ use std::{
 
 use anchor_lang::{
     prelude::*,
-    solana_program::{
+    trezoa_program::{
         msg,
         program::{invoke_signed_unchecked, invoke_unchecked},
         program_error::ProgramError,

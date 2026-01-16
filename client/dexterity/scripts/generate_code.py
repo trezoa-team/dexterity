@@ -5,9 +5,9 @@ import subprocess
 from functools import partial
 from typing import Callable, Dict, Union, Set
 
-from solana.publickey import PublicKey
-from solana.system_program import SYS_PROGRAM_ID
-from solana.sysvar import SYSVAR_RENT_PUBKEY
+from trezoa.publickey import PublicKey
+from trezoa.system_program import SYS_PROGRAM_ID
+from trezoa.sysvar import SYSVAR_RENT_PUBKEY
 from solmate.anchor import Idl
 from solmate.anchor.codegen import usize_type, unix_timestamp_type, program_error_type, CodeGen
 from solmate.anchor.editor import CodeEditor
@@ -137,7 +137,7 @@ def dir_to_pids(dir: str) -> Dict[str, str]:
         if match is None:
             continue
         program = match.groups()[0]
-        program_to_id[program] = run(f"solana-keygen pubkey {dir}/{filename}")
+        program_to_id[program] = run(f"trezoa-keygen pubkey {dir}/{filename}")
     return program_to_id
 
 

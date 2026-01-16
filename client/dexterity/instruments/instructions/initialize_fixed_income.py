@@ -1,6 +1,6 @@
 import struct
 
-from solana.publickey import PublicKey
+from trezoa.publickey import PublicKey
 
 from dexterity.program_ids import INSTRUMENTS_PROGRAM_ID
 

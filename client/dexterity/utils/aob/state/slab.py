@@ -6,7 +6,7 @@ from dataclasses import field
 from typing import Union
 from io import BytesIO
 
-from solana.publickey import PublicKey
+from trezoa.publickey import PublicKey
 
 
 from podite import (

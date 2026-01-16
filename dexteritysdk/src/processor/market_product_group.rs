@@ -1,10 +1,10 @@
 use anchor_lang::{InstructionData, ToAccountMetas};
-use solana_program::{
+use trezoa_program::{
     instruction::Instruction, program_error::ProgramError, pubkey::Pubkey,
     system_instruction::create_account, system_program, sysvar,
 };
-use solana_program_test::ProgramTestContext;
-use solana_sdk::signature::{Keypair, Signer};
+use trezoa_program_test::ProgramTestContext;
+use trezoa_sdk::signature::{Keypair, Signer};
 
 use crate::{
     common::utils::*,
@@ -78,7 +78,7 @@ pub fn initialize_market_product_group_ixs(
             risk_engine_program: risk_engine_program_id,
             sysvar_rent: sysvar::rent::id(),
             system_program: system_program::id(),
-            token_program: spl_token::id(),
+            token_program: tpl_token::id(),
             fee_output_register: fee_output_register_keypair.pubkey(),
             risk_output_register: risk_output_register_keypair.pubkey(),
         }

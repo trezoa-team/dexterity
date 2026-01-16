@@ -1,7 +1,7 @@
 from typing import Optional
 
-from solana.publickey import PublicKey
-from solana.transaction import Transaction
+from trezoa.publickey import PublicKey
+from trezoa.transaction import Transaction
 
 import dexterity.constant_fees.instructions as ixs
 import dexterity.program_ids as pids
@@ -10,7 +10,7 @@ from dexterity.dex.addrs import (
     get_trader_risk_group_addr,
     get_fee_model_configuration_addr,
 )
-from dexterity.utils.solana import (
+from dexterity.utils.trezoa import (
     actionify,
 )
 

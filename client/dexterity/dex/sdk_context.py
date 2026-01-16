@@ -3,11 +3,11 @@ from dataclasses import dataclass
 from typing import List, Union, Optional
 
 from podite import FixedLenArray
-from solana.keypair import Keypair
-from solana.publickey import PublicKey
-from solana.system_program import SYS_PROGRAM_ID
-from solana.transaction import AccountMeta
-from solana import system_program
+from trezoa.keypair import Keypair
+from trezoa.publickey import PublicKey
+from trezoa.system_program import SYS_PROGRAM_ID
+from trezoa.transaction import AccountMeta
+from trezoa import system_program
 
 import dexterity.codegen.dex.instructions as dixs
 import dexterity.codegen.dex.types as dtys
@@ -19,10 +19,10 @@ from dexterity.constant_fees import instructions as fee_ixs
 from dexterity.dex import addrs as daddrs
 from dexterity.dex.addrs import get_risk_signer
 from dexterity.program_ids import INSTRUMENTS_PROGRAM_ID
-from dexterity.utils import solana as solana_utils
+from dexterity.utils import trezoa as trezoa_utils
 from dexterity.utils.aob import state as aaob_state
 from dexterity.codegen.instruments.accounts import Accounts as InstrumentAccounts
-from dexterity.utils.solana import Client, Context, AccountParser, explore, fetch_account_details
+from dexterity.utils.trezoa import Client, Context, AccountParser, explore, fetch_account_details
 from solmate.utils import to_account_meta
 
 
@@ -57,7 +57,7 @@ class SDKProduct:
             ),
             remaining_accounts=[AccountMeta(pk, False, False) for pk in trader_and_risk_accounts]
         )
-        solana_utils.send_instructions(ix)
+        trezoa_utils.send_instructions(ix)
 
 
 def _dedup(xs):
@@ -116,7 +116,7 @@ class SDKTrader:
             ),
             program_id=self.dex_program,
         )
-        return solana_utils.send_instructions(ix)
+        return trezoa_utils.send_instructions(ix)
 
     def withdraw(self, sdk: "SDKContext", qty: Union[float, dtys.Fractional]):
         if not isinstance(qty, dtys.Fractional):
@@ -137,7 +137,7 @@ class SDKTrader:
             ),
             program_id=self.dex_program,
         )
-        return solana_utils.send_instructions(ix)
+        return trezoa_utils.send_instructions(ix)
 
     def place_order(
             self,
@@ -151,7 +151,7 @@ class SDKTrader:
             risk_accounts: Optional[List[PublicKey]] = None,
     ) -> Optional[int]:
         ix = self._place_order_ix(sdk, product, side, size, price, self_trade_behavior, order_type, risk_accounts)
-        trans_details = solana_utils.send_instructions(ix)
+        trans_details = trezoa_utils.send_instructions(ix)
 
         pattern = '^Program log: Order summary : OrderSummary { posted_order_id: Some\((\\d+)\).*'
         for log_line in trans_details.log_messages:
@@ -225,7 +225,7 @@ class SDKTrader:
             under_water_trg: PublicKey,
     ):
         ix = self._cancel_ix(sdk, product, order_id, under_water_trg)
-        return solana_utils.send_instructions(ix)
+        return trezoa_utils.send_instructions(ix)
 
     def _cancel_ix(
             self,
@@ -273,7 +273,7 @@ class SDKTrader:
         cancel_ix = self._cancel_ix(sdk, product, order_id, self.account)
         place_ix = self._place_order_ix(sdk, product, side, size, price, self_trade_behavior, order_type, risk_accounts)
 
-        trans_details = solana_utils.send_instructions(cancel_ix, place_ix)
+        trans_details = trezoa_utils.send_instructions(cancel_ix, place_ix)
 
         pattern = '^Program log: Order summary : OrderSummary { posted_order_id: Some\((\\d+)\).*'
         for log_line in trans_details.log_messages:
@@ -361,7 +361,7 @@ class SDKContext:
             raise_on_error=raise_on_error,
         )
 
-        mpg: MarketProductGroup = solana_utils.explore(market_product_group_key).data_obj
+        mpg: MarketProductGroup = trezoa_utils.explore(market_product_group_key).data_obj
         print(mpg.name, bytes(mpg.name))
 
         sdk_context = SDKContext(
@@ -395,7 +395,7 @@ class SDKContext:
         return sdk_context
 
     def load_mpg(self) -> MarketProductGroup:
-        return solana_utils.fetch_account_details(self.market_product_group).data_obj
+        return trezoa_utils.fetch_account_details(self.market_product_group).data_obj
 
     def load_products(self):
         mpg = self.load_mpg()
@@ -417,7 +417,7 @@ class SDKContext:
         self.products = products
 
     def register_trader(self, keypair: Keypair, wallet: PublicKey):
-        from solana.system_program import SYS_PROGRAM_ID
+        from trezoa.system_program import SYS_PROGRAM_ID
         trader_risk_group = Keypair.generate()
         trader_risk_state_acct = Keypair.generate()
         _ident = keypair.public_key.to_base58()[:8]
@@ -443,7 +443,7 @@ class SDKContext:
             system_program.CreateAccountParams(
                 from_pubkey=self.payer.public_key,
                 new_account_pubkey=trader_risk_group.public_key,
-                lamports=solana_utils.calc_rent(size),
+                lamports=trezoa_utils.calc_rent(size),
                 space=size,
                 program_id=self.dex_program,
             )
@@ -460,6 +460,6 @@ class SDKContext:
             program_id=self.dex_program,
             # **vars(self),
         )
-        solana_utils.send_instructions(fee_ix, allocate_trg, trg_init_ix)
+        trezoa_utils.send_instructions(fee_ix, allocate_trg, trg_init_ix)
         return SDKTrader.connect(
             self, trader_risk_group.public_key, keypair, wallet, trader_risk_state_acct.public_key)

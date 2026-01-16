@@ -1,8 +1,8 @@
 use std::ops::Deref;
 
 use agnostic_orderbook::state::Side;
-use solana_program::pubkey::Pubkey;
-use solana_sdk::{signature::Keypair, signer::Signer};
+use trezoa_program::pubkey::Pubkey;
+use trezoa_sdk::{signature::Keypair, signer::Signer};
 
 use crate::processor::remove_market_product::remove_market_product_ixs;
 use dex::{state::constants::NAME_LEN, utils::numeric::Fractional};

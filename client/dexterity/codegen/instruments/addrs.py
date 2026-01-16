@@ -1,5 +1,5 @@
 # LOCK-BEGIN[imports]: DON'T MODIFY
-from solana.publickey import PublicKey
+from trezoa.publickey import PublicKey
 
 # LOCK-END
 

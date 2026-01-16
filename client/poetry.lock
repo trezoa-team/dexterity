@@ -1132,7 +1132,7 @@ python-versions = ">=3.7"
 [[package]]
 name = "pythclient"
 version = "0.0.2"
-description = "A library to retrieve Pyth account structures off the Solana blockchain."
+description = "A library to retrieve Pyth account structures off the Trezoa blockchain."
 category = "main"
 optional = false
 python-versions = ">=3.7.0"
@@ -1310,9 +1310,9 @@ optional = false
 python-versions = ">=3.5"
 
 [[package]]
-name = "solana"
+name = "trezoa"
 version = "0.19.1"
-description = "Solana Python API"
+description = "Trezoa Python API"
 category = "main"
 optional = false
 python-versions = ">=3.7,<4.0"
@@ -1343,7 +1343,7 @@ develop = false
 [package.dependencies]
 argparse = "^1.4.0"
 podite = "^0.1.1"
-solana = "^0.19.0"
+trezoa = "^0.19.0"
 
 [package.source]
 type = "git"
@@ -2548,9 +2548,9 @@ sniffio = [
     {file = "sniffio-1.2.0-py3-none-any.whl", hash = "sha256:471b71698eac1c2112a40ce2752bb2f4a4814c22a54a3eed3676bc0f5ca9f663"},
     {file = "sniffio-1.2.0.tar.gz", hash = "sha256:c4666eecec1d3f50960c6bdf61ab7bc350648da6c126e3cf6898d8cd4ddcd3de"},
 ]
-solana = [
-    {file = "solana-0.19.1-py3-none-any.whl", hash = "sha256:5d205a85ea38fe011295dc22e9add8dff33f5509e0374c15d826d0a1e03310e1"},
-    {file = "solana-0.19.1.tar.gz", hash = "sha256:70beb10485db01b04536521520c0edc8598a1c972a08e4aecd3bf1830c7637ac"},
+trezoa = [
+    {file = "trezoa-0.19.1-py3-none-any.whl", hash = "sha256:5d205a85ea38fe011295dc22e9add8dff33f5509e0374c15d826d0a1e03310e1"},
+    {file = "trezoa-0.19.1.tar.gz", hash = "sha256:70beb10485db01b04536521520c0edc8598a1c972a08e4aecd3bf1830c7637ac"},
 ]
 solmate = []
 stack-data = [

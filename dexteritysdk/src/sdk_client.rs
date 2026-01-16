@@ -5,15 +5,15 @@ use anyhow::anyhow;
 use async_trait::async_trait;
 use itertools::Itertools;
 use serde::{Deserialize, Serialize};
-use solana_client::{
+use trezoa_client::{
     rpc_client::RpcClient, rpc_config::RpcSendTransactionConfig, thin_client::ThinClient,
 };
-use solana_program::{
+use trezoa_program::{
     account_info::AccountInfo, hash::Hash, instruction::Instruction, pubkey::Pubkey, rent::Rent,
     sysvar::SysvarId,
 };
-use solana_program_test::BanksClient;
-use solana_sdk::{
+use trezoa_program_test::BanksClient;
+use trezoa_sdk::{
     account::Account,
     client::SyncClient,
     commitment_config::{CommitmentConfig, CommitmentLevel},

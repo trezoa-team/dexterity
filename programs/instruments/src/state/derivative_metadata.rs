@@ -1,7 +1,7 @@
 use crate::state::enums::{AccountTag, ExpirationStatus, InstrumentType, OracleType};
 use anchor_lang::prelude::*;
 use dex::utils::numeric::Fractional;
-use solana_program::{clock::UnixTimestamp, program_error::ProgramError, pubkey::Pubkey};
+use trezoa_program::{clock::UnixTimestamp, program_error::ProgramError, pubkey::Pubkey};
 
 #[account(zero_copy)]
 pub struct DerivativeMetadata {

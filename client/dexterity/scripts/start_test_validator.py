@@ -6,7 +6,7 @@ import subprocess
 def main():
     programs = get_program_to_id()
     root = get_root()
-    cmd = "solana-test-validator"
+    cmd = "trezoa-test-validator"
     args = ""
     for (name, pid) in programs.items():
         path = f"{root}/target/deploy/{name}.so"

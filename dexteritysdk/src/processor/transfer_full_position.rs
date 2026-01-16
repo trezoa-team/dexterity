@@ -1,9 +1,9 @@
 use crate::{common::utils::*, sdk_client::SDKClient};
 use anchor_lang::{InstructionData, ToAccountMetas};
 use dex::{accounts, instruction};
-use solana_program::{instruction::Instruction, pubkey::Pubkey};
-use solana_program_test::ProgramTestContext;
-use solana_sdk::signature::{Keypair, Signer};
+use trezoa_program::{instruction::Instruction, pubkey::Pubkey};
+use trezoa_program_test::ProgramTestContext;
+use trezoa_sdk::signature::{Keypair, Signer};
 
 pub fn transfer_full_position_ixs(
     user: Pubkey,

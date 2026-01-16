@@ -10,7 +10,7 @@ from podite import (
     U8,
     pod,
 )
-from solana.publickey import PublicKey
+from trezoa.publickey import PublicKey
 from solmate.dtypes import UnixTimestamp
 
 # LOCK-END
