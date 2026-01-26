@@ -19,7 +19,7 @@ bonfida-utils = "0.2"
 borsh = "0.9"
 bytemuck = { version = "1.7.2", features = ["derive"] }
 pyth-client = "0.3.0"
-spl-associated-token-account = { version = "1.0.3", features = ["no-entrypoint"] }
+tpl-associated-token-account = { version = "1.0.3", features = ["no-entrypoint"] }
 tpl-token = { version = "3.1.1", features = ["no-entrypoint"] }
 thiserror = "1.0"
 num-traits = "0.2.14"

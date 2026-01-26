@@ -20,7 +20,7 @@ anchor-lang = "0.24.2"
 trezoa-program = "1.8.12"
 thiserror = "1.0"
 tpl-token = {version = "3.1.1", features = ["no-entrypoint"]}
-spl-associated-token-account = {version = "1.0.3", features = ["no-entrypoint"]}
+tpl-associated-token-account = {version = "1.0.3", features = ["no-entrypoint"]}
 dex = { path = "../dex", features = ["no-entrypoint", "cpi"]}
 dummy-oracle = { path = "../dummy-oracle", features = ["no-entrypoint"]}
 bytemuck = {version = "1.7.2", features = ["derive"]}

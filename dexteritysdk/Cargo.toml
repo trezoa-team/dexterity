@@ -28,7 +28,7 @@ itertools = "0.10.3"
 noop-risk-engine = { path = "../programs/risk/noop-risk-engine", features = ["no-entrypoint"] }
 pyth-client = "0.3.0"
 trezoa-program = "1.8.12"
-spl-associated-token-account = { version = "1.0.3", features = ["no-entrypoint"] }
+tpl-associated-token-account = { version = "1.0.3", features = ["no-entrypoint"] }
 tpl-token = { version = "3.1.1", features = ["no-entrypoint"] }
 thiserror = "1.0"
 num-traits = "0.2.14"
