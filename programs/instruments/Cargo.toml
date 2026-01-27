@@ -16,7 +16,7 @@ cpi = ["no-entrypoint"]
 default = []
 
 [dependencies]
-anchor-lang = "0.24.2"
+trezoaanchor-lang = "0.24.2"
 trezoa-program = "1.8.12"
 thiserror = "1.0"
 tpl-token = {version = "3.1.1", features = ["no-entrypoint"]}

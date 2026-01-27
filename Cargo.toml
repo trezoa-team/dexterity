@@ -24,4 +24,4 @@ codegen-units = 1
 
 
 [profile.dev]
-split-debuginfo = "unpacked"
+tplit-debuginfo = "unpacked"

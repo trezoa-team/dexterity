@@ -8,7 +8,7 @@ no-entrypoint = []
 test-bpf = []
 
 [dependencies]
-anchor-lang = "0.24.2"
+trezoaanchor-lang = "0.24.2"
 dex = { path = "../../dex", features = ["no-entrypoint"] }
 trezoa-program = "1.8.12"
 thiserror = "1.0"

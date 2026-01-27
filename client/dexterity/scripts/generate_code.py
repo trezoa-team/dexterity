@@ -12,7 +12,7 @@ from solmate.anchor import Idl
 from solmate.anchor.codegen import usize_type, unix_timestamp_type, program_error_type, CodeGen
 from solmate.anchor.editor import CodeEditor
 from solmate.utils import pascal_to_snake
-from spl.token.constants import TOKEN_PROGRAM_ID
+from tpl.token.constants import TOKEN_PROGRAM_ID
 
 from dexterity.scripts.extract_program_ids import get_root
 

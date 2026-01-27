@@ -1,4 +1,4 @@
-use anchor_lang::{InstructionData, ToAccountMetas};
+use trezoaanchor_lang::{InstructionData, ToAccountMetas};
 use anyhow::anyhow;
 use trezoa_program::{instruction::Instruction, pubkey::Pubkey};
 use trezoa_sdk::signer::Signer;

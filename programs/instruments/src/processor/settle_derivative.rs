@@ -7,7 +7,7 @@ use crate::{
     },
     SettleDerivative,
 };
-use anchor_lang::prelude::*;
+use trezoaanchor_lang::prelude::*;
 use dex::{
     error::{DomainOrProgramError, DomainOrProgramResult, UtilError},
     state::{

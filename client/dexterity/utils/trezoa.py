@@ -173,7 +173,7 @@ class TransactionDetails:
         result = dict()
         for msg in self.log_messages:
             if msg.startswith(DEX_LOG_PREFIX):
-                key, val = msg[len(DEX_LOG_PREFIX):].split(" ")
+                key, val = msg[len(DEX_LOG_PREFIX):].tplit(" ")
                 result[key] = base64.b64decode(val)
 
         return result

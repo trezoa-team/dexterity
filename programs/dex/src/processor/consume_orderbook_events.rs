@@ -9,7 +9,7 @@ use agnostic_orderbook::{
     instruction::consume_events,
     state::{Event, EventQueue, EventQueueHeader, Side},
 };
-use anchor_lang::{
+use trezoaanchor_lang::{
     prelude::*,
     trezoa_program::{
         account_info::AccountInfo, clock::Clock, entrypoint::ProgramResult, msg,

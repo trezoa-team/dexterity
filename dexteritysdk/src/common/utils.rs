@@ -5,7 +5,7 @@ use std::{
 };
 
 use anchor_client::ClientError;
-use anchor_lang::Key;
+use trezoaanchor_lang::Key;
 use anyhow::{anyhow, Error};
 use trezoa_program::{
     instruction::Instruction, message::Message, program_error::ProgramError,
@@ -20,7 +20,7 @@ use trezoa_sdk::{
     transaction::Transaction,
     transport::TransportError,
 };
-use spl_associated_token_account::{create_associated_token_account, get_associated_token_address};
+use tpl_associated_token_account::{create_associated_token_account, get_associated_token_address};
 use tpl_token::{instruction, state::Mint};
 use thiserror::Error;
 use tokio::task::spawn_blocking;

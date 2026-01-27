@@ -7,7 +7,7 @@ use crate::{
     utils::{cpi::create_risk_state_account, numeric::ZERO_FRAC, validation::assert_keys_equal},
     InitializeTraderRiskGroup,
 };
-use anchor_lang::{
+use trezoaanchor_lang::{
     prelude::*,
     trezoa_program::{msg, pubkey::Pubkey},
 };

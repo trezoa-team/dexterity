@@ -1,4 +1,4 @@
-use anchor_lang::{prelude::*, trezoa_program::pubkey::Pubkey};
+use trezoaanchor_lang::{prelude::*, trezoa_program::pubkey::Pubkey};
 use bytemuck::{Pod, Zeroable};
 
 use crate::utils::loadable::Loadable;

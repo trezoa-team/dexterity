@@ -7,7 +7,7 @@ use crate::state::{
     derivative_metadata::DerivativeMetadata,
     enums::{InstrumentType, OracleType},
 };
-use anchor_lang::prelude::*;
+use trezoaanchor_lang::prelude::*;
 use bytemuck::{Pod, Zeroable};
 use dex::utils::numeric::Fractional;
 use trezoa_program::{

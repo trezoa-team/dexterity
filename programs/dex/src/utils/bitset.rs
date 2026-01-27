@@ -4,7 +4,7 @@ use crate::{
     error::{DexError, DomainOrProgramResult},
     UtilError,
 };
-use anchor_lang::{AnchorDeserialize, AnchorSerialize};
+use trezoaanchor_lang::{AnchorDeserialize, AnchorSerialize};
 use serde::{Deserialize, Serialize};
 
 #[derive(

@@ -1,6 +1,6 @@
 use std::ops::Deref;
 
-use anchor_lang::prelude::*;
+use trezoaanchor_lang::prelude::*;
 use borsh::{BorshDeserialize, BorshSerialize};
 use trezoa_program::{
     account_info::AccountInfo, declare_id, entrypoint::ProgramResult, program_error::ProgramError,

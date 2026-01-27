@@ -2,7 +2,7 @@ use crate::{
     error::DomainOrProgramResult, utils::validation::assert_keys_equal, ChooseSuccessor,
     ClaimAuthority,
 };
-use anchor_lang::prelude::*;
+use trezoaanchor_lang::prelude::*;
 
 pub fn choose_successor(ctx: Context<ChooseSuccessor>) -> DomainOrProgramResult {
     let accts = ctx.accounts;

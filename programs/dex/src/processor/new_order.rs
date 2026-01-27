@@ -3,7 +3,7 @@ use std::{
     cell::{Ref, RefMut},
 };
 
-use anchor_lang::{
+use trezoaanchor_lang::{
     prelude::*,
     trezoa_program::{
         msg,

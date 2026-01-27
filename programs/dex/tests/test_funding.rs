@@ -1,7 +1,7 @@
 #![allow(non_snake_case)]
 
 use agnostic_orderbook::state::Side;
-use anchor_lang::trezoa_program::sysvar::clock::Clock;
+use trezoaanchor_lang::trezoa_program::sysvar::clock::Clock;
 use borsh::BorshDeserialize;
 use dexteritysdk::{
     common::{utils::*, KeypairD},

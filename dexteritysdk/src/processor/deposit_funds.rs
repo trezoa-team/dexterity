@@ -1,7 +1,7 @@
 use crate::common::utils::*;
 
 use crate::{sdk_client::SDKClient, KeypairD};
-use anchor_lang::{InstructionData, ToAccountMetas};
+use trezoaanchor_lang::{InstructionData, ToAccountMetas};
 use dex::{accounts, instruction, utils::numeric::Fractional};
 use trezoa_program::{instruction::Instruction, pubkey::Pubkey};
 use trezoa_program_test::ProgramTestContext;

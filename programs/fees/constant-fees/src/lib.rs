@@ -1,4 +1,4 @@
-use anchor_lang::prelude::*;
+use trezoaanchor_lang::prelude::*;
 use borsh::{BorshDeserialize, BorshSerialize};
 use trezoa_program::{
     account_info::{next_account_info, AccountInfo},

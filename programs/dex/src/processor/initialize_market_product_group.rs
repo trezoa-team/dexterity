@@ -1,4 +1,4 @@
-use anchor_lang::{
+use trezoaanchor_lang::{
     prelude::*,
     trezoa_program::{
         log::sol_log_params,

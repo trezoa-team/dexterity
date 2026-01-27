@@ -1,5 +1,5 @@
 use crate::{common::utils::*, sdk_client::SDKClient};
-use anchor_lang::{InstructionData, ToAccountMetas};
+use trezoaanchor_lang::{InstructionData, ToAccountMetas};
 use dex::utils::numeric::Fractional;
 use instruments::{
     accounts,

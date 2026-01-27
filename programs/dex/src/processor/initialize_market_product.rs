@@ -13,7 +13,7 @@ use crate::{
     },
     DomainOrProgramError, InitializeMarketProduct, InitializeMarketProductParams,
 };
-use anchor_lang::{
+use trezoaanchor_lang::{
     prelude::*,
     trezoa_program::{
         msg,

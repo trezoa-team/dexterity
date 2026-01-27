@@ -1,5 +1,5 @@
 use crate::error::{DexError, DomainOrProgramResult};
-use anchor_lang::{
+use trezoaanchor_lang::{
     prelude::*,
     trezoa_program::{msg, program_error::ProgramError},
 };

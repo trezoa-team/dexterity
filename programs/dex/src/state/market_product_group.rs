@@ -1,6 +1,6 @@
 use std::ops::{Deref, DerefMut};
 
-use anchor_lang::{
+use trezoaanchor_lang::{
     prelude::*,
     trezoa_program::{
         entrypoint::ProgramResult, program_error::ProgramError, program_pack::IsInitialized,

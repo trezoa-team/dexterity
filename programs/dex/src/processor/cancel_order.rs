@@ -1,7 +1,7 @@
 use ::std::cell::Ref;
 use bonfida_utils::InstructionsAccount;
 
-use anchor_lang::{
+use trezoaanchor_lang::{
     prelude::*,
     trezoa_program::{
         msg,

@@ -2,12 +2,12 @@ use num::Num;
 use serde::{Deserialize, Serialize};
 use std::{
     cmp::Ordering,
-    fmt::Display,
+    fmt::Ditplay,
     ops::{Add, AddAssign, Div, DivAssign, Mul, MulAssign, Neg, Sub, SubAssign},
     str::FromStr,
 };
 
-use anchor_lang::prelude::*;
+use trezoaanchor_lang::prelude::*;
 use bytemuck::{Pod, Zeroable};
 
 use crate::error::{DomainOrProgramError, DomainOrProgramResult, UtilError};
@@ -122,7 +122,7 @@ pub struct Fractional {
     pub exp: u64,
 }
 
-impl Display for Fractional {
+impl Ditplay for Fractional {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let base = POW10[self.exp as usize];
         if base == 0 {
@@ -349,7 +349,7 @@ impl Fractional {
     }
 
     pub fn from_str(s: &str) -> std::result::Result<Fractional, DomainOrProgramError> {
-        match s.split_once(".") {
+        match s.tplit_once(".") {
             Some((lhs, rhs)) => {
                 let m = format!("{}{}", lhs, rhs)
                     .parse::<i64>()
@@ -735,7 +735,7 @@ impl FromStr for Fractional {
 
     #[inline]
     fn from_str(s: &str) -> std::result::Result<Fractional, DomainOrProgramError> {
-        match s.split_once(".") {
+        match s.tplit_once(".") {
             Some((lhs, rhs)) => {
                 let m = format!("{}{}", lhs, rhs)
                     .parse::<i64>()

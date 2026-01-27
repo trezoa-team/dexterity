@@ -1,4 +1,4 @@
-use anchor_lang::prelude::*;
+use trezoaanchor_lang::prelude::*;
 use bytemuck::{Pod, Zeroable};
 use serde::{Deserialize, Serialize};
 

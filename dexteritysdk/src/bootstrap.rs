@@ -4,8 +4,8 @@ use std::{
 };
 
 use anchor_client::Cluster;
-use anchor_lang::Key;
-use anchor_spl::token::accessor::authority;
+use trezoaanchor_lang::Key;
+use anchor_tpl::token::accessor::authority;
 use arrayvec::ArrayVec;
 use pyth_client::{
     load_mapping, load_price, load_product, CorpAction, PriceStatus, PriceType, Product, PythError,

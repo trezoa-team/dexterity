@@ -2,7 +2,7 @@ use num_derive::FromPrimitive;
 use std::{error::Error, fmt::Formatter};
 
 use crate::DomainOrProgramError::ProgramErr;
-use anchor_lang::trezoa_program::{
+use trezoaanchor_lang::trezoa_program::{
     decode_error::DecodeError, program_error::ProgramError, pubkey::PubkeyError,
 };
 use thiserror::Error;
@@ -159,7 +159,7 @@ impl<T> DecodeError<T> for UtilError {
     }
 }
 
-impl std::fmt::Display for DomainOrProgramError {
+impl std::fmt::Ditplay for DomainOrProgramError {
     fn fmt(&self, f: &mut Formatter<'_>) -> std::fmt::Result {
         match self {
             DomainOrProgramError::ProgramErr(p) => write!(f, "{}", p),
@@ -189,8 +189,8 @@ impl From<DexError> for ProgramError {
     }
 }
 
-impl From<anchor_lang::error::Error> for DomainOrProgramError {
-    fn from(e: anchor_lang::error::Error) -> Self {
+impl From<trezoaanchor_lang::error::Error> for DomainOrProgramError {
+    fn from(e: trezoaanchor_lang::error::Error) -> Self {
         ProgramError::from(e).into()
     }
 }

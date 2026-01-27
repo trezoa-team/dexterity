@@ -12,7 +12,7 @@ use crate::{
     state::constants::{HEALTH_BUFFER_LEN, MAX_OUTRIGHTS, MAX_TRADER_POSITIONS},
 };
 
-use anchor_lang::prelude::*;
+use trezoaanchor_lang::prelude::*;
 
 #[derive(Copy, AnchorSerialize, AnchorDeserialize, Clone, PartialEq, Debug)]
 #[repr(u8)]

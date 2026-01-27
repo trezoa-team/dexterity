@@ -1,4 +1,4 @@
-use anchor_lang::prelude::*;
+use trezoaanchor_lang::prelude::*;
 use dex::{
     state::{
         constants::MAX_TRADER_POSITIONS, market_product_group::MarketProductGroup,

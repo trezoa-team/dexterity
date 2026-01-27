@@ -69,7 +69,7 @@ impl SDKClient {
     pub fn from_rpc(rpc: RpcClient, payer: &Keypair) -> std::result::Result<Self, SDKError> {
         let rent_account = rpc
             .get_account_with_commitment(
-                &anchor_lang::prelude::Rent::id(),
+                &trezoaanchor_lang::prelude::Rent::id(),
                 CommitmentConfig::confirmed(),
             )?
             .value

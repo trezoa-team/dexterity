@@ -1,4 +1,4 @@
-use anchor_lang::{InstructionData, ToAccountMetas};
+use trezoaanchor_lang::{InstructionData, ToAccountMetas};
 use dex::{accounts, state::constants::NAME_LEN, utils::numeric::Fractional};
 use trezoa_program::{
     instruction::{AccountMeta, Instruction},

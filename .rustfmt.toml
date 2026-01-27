@@ -281,8 +281,8 @@ imports_granularity = "Crate"
 # Default: false
 #   use_try_shorthand = 
 
-# What Write Mode to use when none is supplied: Replace, Overwrite, Display, Diff, Coverage.
-# Values: Replace | Overwrite | Display | Diff | Coverage | Plain | Checkstyle
+# What Write Mode to use when none is supplied: Replace, Overwrite, Ditplay, Diff, Coverage.
+# Values: Replace | Overwrite | Ditplay | Diff | Coverage | Plain | Checkstyle
 # Default: Replace
 #   write_mode = 
 

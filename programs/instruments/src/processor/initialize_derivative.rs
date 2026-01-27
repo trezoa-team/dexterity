@@ -3,7 +3,7 @@ use crate::{
     state::enums::{AccountTag, ExpirationStatus, InstrumentType},
     InitializeDerivative, InitializeDerivativeParams,
 };
-use anchor_lang::prelude::*;
+use trezoaanchor_lang::prelude::*;
 use dex::utils::validation::assert;
 use trezoa_program::{
     entrypoint::ProgramResult, program_error::ProgramError, sysvar::clock::Clock,

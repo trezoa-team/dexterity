@@ -1,4 +1,4 @@
-use anchor_lang::{
+use trezoaanchor_lang::{
     prelude::*,
     trezoa_program::{
         program::invoke_signed, program_error::ProgramError, program_pack::IsInitialized,

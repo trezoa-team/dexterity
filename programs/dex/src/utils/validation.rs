@@ -3,7 +3,7 @@ use crate::{
     utils::numeric::Fractional,
     DomainOrProgramError,
 };
-use anchor_lang::trezoa_program::{
+use trezoaanchor_lang::trezoa_program::{
     account_info::AccountInfo,
     msg,
     program_error::ProgramError,
@@ -11,7 +11,7 @@ use anchor_lang::trezoa_program::{
     pubkey::Pubkey,
     sysvar::rent::Rent,
 };
-use spl_associated_token_account::get_associated_token_address;
+use tpl_associated_token_account::get_associated_token_address;
 use tpl_token::state::Account;
 
 #[inline(always)]

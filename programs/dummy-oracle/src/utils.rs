@@ -9,7 +9,7 @@ use trezoa_program::{
     pubkey::Pubkey,
     sysvar::rent::Rent,
 };
-use spl_associated_token_account::get_associated_token_address;
+use tpl_associated_token_account::get_associated_token_address;
 use tpl_token::state::Account;
 
 pub fn get_rent(rent: &Rent, size: u64, account_info: &AccountInfo) -> u64 {

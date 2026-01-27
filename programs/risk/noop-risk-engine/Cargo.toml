@@ -10,8 +10,8 @@ test-bpf = []
 
 [dependencies]
 dex = {path = "../../dex", features = ["no-entrypoint"]}
-anchor-lang = "0.24.2"
-anchor-spl = "0.24.2"
+trezoaanchor-lang = "0.24.2"
+anchor-tpl = "0.24.2"
 trezoa-program = "1.8.12"
 thiserror = "1.0"
 arrayref = "0.3.6"

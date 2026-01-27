@@ -1,5 +1,5 @@
 use crate::state::enums::{AccountTag, ExpirationStatus, InstrumentType, OracleType};
-use anchor_lang::prelude::*;
+use trezoaanchor_lang::prelude::*;
 use dex::utils::numeric::Fractional;
 use trezoa_program::{clock::UnixTimestamp, program_error::ProgramError, pubkey::Pubkey};
 

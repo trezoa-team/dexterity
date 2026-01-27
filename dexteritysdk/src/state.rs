@@ -1,7 +1,7 @@
 use std::{borrow::Borrow, cell::RefCell, marker::PhantomData, sync::Arc};
 
 use agnostic_orderbook::state::SelfTradeBehavior;
-use anchor_lang::Key;
+use trezoaanchor_lang::Key;
 use async_trait::async_trait;
 use trezoa_client::{rpc_client::RpcClient, thin_client::ThinClient};
 use trezoa_program::{hash::Hash, instruction::Instruction, message::Message, pubkey::Pubkey};

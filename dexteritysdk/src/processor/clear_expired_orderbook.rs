@@ -1,4 +1,4 @@
-use anchor_lang::{InstructionData, ToAccountMetas};
+use trezoaanchor_lang::{InstructionData, ToAccountMetas};
 use trezoa_program::{
     instruction::{AccountMeta, Instruction},
     pubkey::Pubkey,

@@ -1,7 +1,7 @@
 use std::{
     fmt::{Debug, Formatter},
     ops::{Deref, DerefMut},
-    path::Display,
+    path::Ditplay,
 };
 
 use anyhow::anyhow;
@@ -93,7 +93,7 @@ impl std::str::FromStr for KeypairD {
     }
 }
 
-impl std::fmt::Display for KeypairD {
+impl std::fmt::Ditplay for KeypairD {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         write!(f, "{}", &self.0.to_base58_string())
     }

@@ -3,7 +3,7 @@ use crate::{
     utils::validation::{assert, assert_keys_equal},
     UpdateTraderFunding,
 };
-use anchor_lang::{prelude::*, trezoa_program::program_pack::IsInitialized};
+use trezoaanchor_lang::{prelude::*, trezoa_program::program_pack::IsInitialized};
 
 pub fn process(ctx: Context<UpdateTraderFunding>) -> DomainOrProgramResult {
     let accts = ctx.accounts;

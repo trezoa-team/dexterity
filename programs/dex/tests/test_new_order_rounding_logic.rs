@@ -1,6 +1,6 @@
 #![allow(non_snake_case)]
 use agnostic_orderbook::state::{Event, Side};
-use anchor_lang::trezoa_program::pubkey::Pubkey;
+use trezoaanchor_lang::trezoa_program::pubkey::Pubkey;
 use constant_fees::update_fees_ix;
 use dex::{state::constants::*, utils::numeric::Fractional};
 use dexteritysdk::{common::utils::*, processor::orderbook::*, state::SDKProduct};
@@ -73,7 +73,7 @@ async fn test_new_order_rounding_logic() {
                 ctx.payer.pubkey(),
                 ctx.fee_model_config_acct,
                 ctx.market_product_group,
-                anchor_lang::trezoa_program::system_program::id(),
+                trezoaanchor_lang::trezoa_program::system_program::id(),
                 constant_fees::UpdateFeesParams {
                     maker_fee_bps: 0,
                     taker_fee_bps: 0,

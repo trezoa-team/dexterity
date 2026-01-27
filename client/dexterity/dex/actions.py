@@ -8,8 +8,8 @@ from trezoa.publickey import PublicKey
 from trezoa.rpc import types
 from trezoa.rpc.commitment import Confirmed
 from trezoa.transaction import Transaction, AccountMeta
-from spl.token.constants import MINT_LEN
-from spl.token.instructions import (
+from tpl.token.constants import MINT_LEN
+from tpl.token.instructions import (
     TOKEN_PROGRAM_ID,
     create_associated_token_account,
     get_associated_token_address,
@@ -717,8 +717,8 @@ def init_mint(
         mint: PublicKey,
         mint_decimals: int = 6,
 ):
-    from spl import token
-    from spl.token import instructions as spl_ixs
+    from tpl import token
+    from tpl.token import instructions as tpl_ixs
     create_mint_ix = system_program.create_account(system_program.CreateAccountParams(
         from_pubkey=authority,
         new_account_pubkey=mint,
@@ -727,7 +727,7 @@ def init_mint(
         program_id=token.constants.TOKEN_PROGRAM_ID,
     ))
 
-    init_mint_ix = spl_ixs.initialize_mint(spl_ixs.InitializeMintParams(
+    init_mint_ix = tpl_ixs.initialize_mint(tpl_ixs.InitializeMintParams(
         decimals=mint_decimals,
         freeze_authority=authority,
         mint=mint,

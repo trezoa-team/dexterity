@@ -1,6 +1,6 @@
 use crate::utils::numeric::Fractional;
 
-use anchor_lang::prelude::*;
+use trezoaanchor_lang::prelude::*;
 
 #[constant]
 pub const NAME_LEN: usize = 16;

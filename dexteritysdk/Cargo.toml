@@ -9,8 +9,8 @@ test-bpf = []
 
 [dependencies]
 agnostic-orderbook = { version = "0.1.0", path = "../programs/agnostic-orderbook/program", features = ["no-entrypoint"] }
-anchor-lang = "0.24.2"
-anchor-spl = "0.24.2"
+trezoaanchor-lang = "0.24.2"
+anchor-tpl = "0.24.2"
 anchor-client = "0.24.2"
 bonfida-utils = "0.2"
 dex = { path = "../programs/dex" }
