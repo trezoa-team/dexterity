@@ -4,7 +4,7 @@ use std::{
     sync::{Arc, LockResult, PoisonError},
 };
 
-use anchor_client::ClientError;
+use trezoaanchor_client::ClientError;
 use trezoaanchor_lang::Key;
 use anyhow::{anyhow, Error};
 use trezoa_program::{
@@ -62,7 +62,7 @@ pub enum SDKError {
     #[error("UtilError")]
     UtilError(#[from] UtilError),
     #[error("Anchor client error")]
-    AnchorClient(#[from] anchor_client::ClientError),
+    TrezoaAnchorClient(#[from] trezoaanchor_client::ClientError),
 }
 
 impl From<Box<dyn std::error::Error>> for SDKError {
@@ -125,7 +125,7 @@ impl SDKClient {
         Box::new(*T::load_from_bytes(account.data.as_slice()).unwrap())
     }
 
-    pub async fn get_anchor_account<T>(&self, key: Pubkey) -> Box<T>
+    pub async fn get_trezoaanchor_account<T>(&self, key: Pubkey) -> Box<T>
     where
         T: Loadable,
     {

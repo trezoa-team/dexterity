@@ -81,8 +81,8 @@ def cli(
                 "sysvar_rent": SYSVAR_RENT_PUBKEY,
                 "program_id": protocol_to_pid[protocol],
             },
-            accnt_tag_values="anchor",
-            instr_tag_values="anchor",
+            accnt_tag_values="trezoaanchor",
+            instr_tag_values="trezoaanchor",
             skip_types=skip_types,
         )
         codegen.generate_code(check_missing_types=not True)

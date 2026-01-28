@@ -12,7 +12,7 @@ test-bpf = []
 [dependencies]
 agnostic-orderbook = { version = "0.1.0", path = "../agnostic-orderbook/program", features = ["no-entrypoint"] }
 trezoaanchor-lang = "0.24.2"
-anchor-tpl = "0.24.2"
+trezoaanchor-tpl = "0.24.2"
 arrayref = "0.3.6"
 base64 = "0.13.0"
 bonfida-utils = "0.2"
@@ -32,7 +32,7 @@ serde-big-array = { version = "0.3.2", features = ["const-generics"] }
 
 [dev-dependencies]
 trezoa-sdk = "1.9.4"
-anchor-client = "0.24.2" 
+trezoaanchor-client = "0.24.2" 
 constant-fees = { path = "../fees/constant-fees", features = ["no-entrypoint"] }
 noop-risk-engine = { path = "../risk/noop-risk-engine", features = ["no-entrypoint"] }
 dexteritysdk = { path = "../../dexteritysdk" }

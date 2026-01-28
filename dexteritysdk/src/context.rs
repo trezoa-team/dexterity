@@ -93,7 +93,7 @@ impl SDKContext {
             .await
     }
 
-    pub async fn create_anchor_account<T>(
+    pub async fn create_trezoaanchor_account<T>(
         &self,
         to_address: &KeypairD,
         owner: &Pubkey,

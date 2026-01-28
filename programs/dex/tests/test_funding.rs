@@ -39,7 +39,7 @@ async fn test_dummy_oracle() {
 
     let derivative_metadata: Box<DerivativeMetadata> = ctx
         .client
-        .get_anchor_account::<DerivativeMetadata>(instrument_pubkey)
+        .get_trezoaanchor_account::<DerivativeMetadata>(instrument_pubkey)
         .await;
 
     // update & read clock time
@@ -166,7 +166,7 @@ async fn test_funding() {
 
     let derivative_metadata: Box<DerivativeMetadata> = ctx
         .client
-        .get_anchor_account::<DerivativeMetadata>(instrument_pubkey)
+        .get_trezoaanchor_account::<DerivativeMetadata>(instrument_pubkey)
         .await;
 
     assert_eq_frac(derivative_metadata.strike, 0);

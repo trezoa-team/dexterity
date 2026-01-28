@@ -45,7 +45,7 @@ impl SDKTrader {
     ) -> std::result::Result<Self, SDKError> {
         let trg = ctx
             .client
-            .get_anchor_account::<TraderRiskGroup>(account)
+            .get_trezoaanchor_account::<TraderRiskGroup>(account)
             .await;
         if trg.owner != keypair.pubkey() {
             return Err(SDKError::PublicKeyMismatch);
@@ -77,7 +77,7 @@ impl SDKTrader {
     }
 
     pub async fn get_trader_risk_group(&self, client: &SDKClient) -> Box<TraderRiskGroup> {
-        client.get_anchor_account(self.account).await
+        client.get_trezoaanchor_account(self.account).await
     }
 
     pub async fn deposit(&self, ctx: &SDKContext, qty: impl Into<Fractional>) -> SDKResult {

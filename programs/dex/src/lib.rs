@@ -11,7 +11,7 @@ use trezoaanchor_lang::{
         sysvar::{rent::Rent, Sysvar},
     },
 };
-use anchor_tpl::token::{Mint, Token, TokenAccount};
+use trezoaanchor_tpl::token::{Mint, Token, TokenAccount};
 use borsh::{BorshDeserialize, BorshSerialize};
 
 use crate::{

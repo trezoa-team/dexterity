@@ -1,6 +1,6 @@
 use std::{cell::RefCell, sync::Arc};
 
-use anchor_client::{ClientError, Program as AnchorClient};
+use trezoaanchor_client::{ClientError, Program as TrezoaAnchorClient};
 use anyhow::anyhow;
 use async_trait::async_trait;
 use itertools::Itertools;

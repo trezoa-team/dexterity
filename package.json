@@ -1,6 +1,6 @@
 {
     "dependencies": {
-        "@project-trezeum/anchor": "^0.19.0"
+        "@trezoa-serum/trezoaanchor": "^0.19.0"
     },
     "devDependencies": {
         "chai": "^4.3.4",

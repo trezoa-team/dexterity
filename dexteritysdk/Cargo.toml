@@ -10,8 +10,8 @@ test-bpf = []
 [dependencies]
 agnostic-orderbook = { version = "0.1.0", path = "../programs/agnostic-orderbook/program", features = ["no-entrypoint"] }
 trezoaanchor-lang = "0.24.2"
-anchor-tpl = "0.24.2"
-anchor-client = "0.24.2"
+trezoaanchor-tpl = "0.24.2"
+trezoaanchor-client = "0.24.2"
 bonfida-utils = "0.2"
 dex = { path = "../programs/dex" }
 alpha-risk-engine = { path = "../programs/risk/alpha-risk-engine", features = ["no-entrypoint"] }

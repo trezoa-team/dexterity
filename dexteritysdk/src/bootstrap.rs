@@ -3,9 +3,9 @@ use std::{
     sync::{Arc, RwLock},
 };
 
-use anchor_client::Cluster;
+use trezoaanchor_client::Cluster;
 use trezoaanchor_lang::Key;
-use anchor_tpl::token::accessor::authority;
+use trezoaanchor_tpl::token::accessor::authority;
 use arrayvec::ArrayVec;
 use pyth_client::{
     load_mapping, load_price, load_product, CorpAction, PriceStatus, PriceType, Product, PythError,
@@ -186,7 +186,7 @@ pub async fn bootstrap_mpg(config: &mut BootstrapConfig, client: SDKClient) -> S
 
     // validation
     let market_product_group = client
-        .get_anchor_account::<MarketProductGroup>(market_product_group_keypair.pubkey())
+        .get_trezoaanchor_account::<MarketProductGroup>(market_product_group_keypair.pubkey())
         .await;
 
     assert_eq!(market_product_group.tag, AccountTag::MarketProductGroup);

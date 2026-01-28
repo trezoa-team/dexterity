@@ -9,7 +9,7 @@ use std::{
 };
 
 use agnostic_orderbook::state::MarketState;
-use anchor_client::{Client as AnchorClient, Cluster, Cluster::Localnet};
+use trezoaanchor_client::{Client as TrezoaAnchorClient, Cluster, Cluster::Localnet};
 use trezoaanchor_lang::Key;
 use anyhow::anyhow;
 use arrayvec::ArrayVec;
@@ -147,7 +147,7 @@ impl SDKContext {
     ) -> SDKResult<SDKContext> {
         let payer = payer.into();
         let client = SDKClient::from_rpc(
-            AnchorClient::new_with_options(
+            TrezoaAnchorClient::new_with_options(
                 url,
                 Rc::new(clone_keypair(&payer)),
                 CommitmentConfig::processed(),
@@ -157,7 +157,7 @@ impl SDKContext {
             &payer,
         )?;
         let mpg = client
-            .get_anchor_account::<MarketProductGroup>(market_product_group_key)
+            .get_trezoaanchor_account::<MarketProductGroup>(market_product_group_key)
             .await;
         let (vault, _) = Pubkey::find_program_address(
             &[b"market_vault", market_product_group_key.as_ref()],
@@ -233,7 +233,7 @@ impl SDKContext {
 
     pub async fn get_market_product_group(&self) -> Box<MarketProductGroup> {
         self.client
-            .get_anchor_account(self.market_product_group)
+            .get_trezoaanchor_account(self.market_product_group)
             .await
     }
 }

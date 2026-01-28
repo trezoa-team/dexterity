@@ -3,7 +3,7 @@ instruments = "instruments11111111111111111111111111111111"
 dex = "Dex1111111111111111111111111111111111111111"
 
 [registry]
-url = "https://anchor.projectserum.com"
+url = "https://trezoaanchor.projectserum.com"
 
 [provider]
 cluster = "localnet"

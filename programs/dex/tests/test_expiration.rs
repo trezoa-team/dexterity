@@ -145,7 +145,7 @@ async fn test_expiration() {
 
     let mpg = ctx
         .client
-        .get_anchor_account::<MarketProductGroup>(ctx.market_product_group)
+        .get_trezoaanchor_account::<MarketProductGroup>(ctx.market_product_group)
         .await;
     assert_eq!(
         mpg.market_products[0]
@@ -176,7 +176,7 @@ async fn test_expiration() {
             .unwrap();
         let trg = ctx
             .client
-            .get_anchor_account::<TraderRiskGroup>(trader.account)
+            .get_trezoaanchor_account::<TraderRiskGroup>(trader.account)
             .await;
         assert_eq!(
             trg.trader_positions[0].last_cum_funding_snapshot,
@@ -191,7 +191,7 @@ async fn test_expiration() {
 
     let mpg = ctx
         .client
-        .get_anchor_account::<MarketProductGroup>(ctx.market_product_group)
+        .get_trezoaanchor_account::<MarketProductGroup>(ctx.market_product_group)
         .await;
     assert_eq!(
         mpg.market_products[0]
@@ -222,7 +222,7 @@ async fn test_expiration() {
             .unwrap();
         let trg = ctx
             .client
-            .get_anchor_account::<TraderRiskGroup>(trader.account)
+            .get_trezoaanchor_account::<TraderRiskGroup>(trader.account)
             .await;
         assert_eq!(
             trg.trader_positions[0].last_cum_funding_snapshot,
@@ -253,7 +253,7 @@ async fn test_expiration() {
 
     let mpg = ctx
         .client
-        .get_anchor_account::<MarketProductGroup>(ctx.market_product_group)
+        .get_trezoaanchor_account::<MarketProductGroup>(ctx.market_product_group)
         .await;
     assert_eq!(
         mpg.market_products[0]
@@ -278,7 +278,7 @@ async fn test_expiration() {
             .unwrap();
         trgs.push(
             ctx.client
-                .get_anchor_account::<TraderRiskGroup>(trader.account)
+                .get_trezoaanchor_account::<TraderRiskGroup>(trader.account)
                 .await,
         );
     }

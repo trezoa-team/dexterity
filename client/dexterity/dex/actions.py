@@ -145,7 +145,7 @@ def init_market_product_group(
         name: Optional[str] = None,
         risk_engine_program: Optional[PublicKey] = pids.ALPHA_RISK_ENGINE_PROGRAM_ID,
         fee_model_program: Optional[PublicKey] = pids.CONSTANT_FEES_MODEL_PROGRAM_ID,
-        is_risk_anchor: bool = True,
+        is_risk_trezoaanchor: bool = True,
         params: dex_types.InitializeMarketProductGroupParams = None
 ):
     market_product_group = dex_addrs.get_market_product_group_addr(authority, seed)
@@ -166,7 +166,7 @@ def init_market_product_group(
         name = name + b" " * (16 - len(name))
 
     if params is None:
-        if is_risk_anchor:
+        if is_risk_trezoaanchor:
             disc_len = U64(8)
             health = U64(sighash_int("validate_account_health"))
             liquidation = U64(sighash_int("validate_account_liquidation"))
