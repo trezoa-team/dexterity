@@ -68,7 +68,7 @@ def deposit_funds(
     market_product_group: Union[str, PublicKey, AccountMeta],
     market_product_group_vault: Union[str, PublicKey, AccountMeta],
     params: DepositFundsParams,
-    token_program: Union[str, PublicKey, AccountMeta] = PublicKey("TokenkegQfeZyiNwAJbNbGKPFXCWuBvf9Ss623VQ5DA"),
+    token_program: Union[str, PublicKey, AccountMeta] = PublicKey("4JkrrPuuQPxDZuBW1bgrM1GBa8oYg1LxcuX9szBPh3ic"),
     remaining_accounts: Optional[List[AccountMeta]] = None,
     program_id: Optional[PublicKey] = None,
 ):

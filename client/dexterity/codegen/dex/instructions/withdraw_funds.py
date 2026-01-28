@@ -83,7 +83,7 @@ def withdraw_funds(
     trader_risk_state_acct: Union[str, PublicKey, AccountMeta],
     risk_signer: Union[str, PublicKey, AccountMeta],
     params: WithdrawFundsParams,
-    token_program: Union[str, PublicKey, AccountMeta] = PublicKey("TokenkegQfeZyiNwAJbNbGKPFXCWuBvf9Ss623VQ5DA"),
+    token_program: Union[str, PublicKey, AccountMeta] = PublicKey("4JkrrPuuQPxDZuBW1bgrM1GBa8oYg1LxcuX9szBPh3ic"),
     remaining_accounts: Optional[List[AccountMeta]] = None,
     program_id: Optional[PublicKey] = None,
 ):

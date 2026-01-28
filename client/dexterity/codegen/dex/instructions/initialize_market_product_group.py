@@ -92,7 +92,7 @@ def initialize_market_product_group(
     params: InitializeMarketProductGroupParams,
     sysvar_rent: Union[str, PublicKey, AccountMeta] = PublicKey("SysvarRent111111111111111111111111111111111"),
     system_program: Union[str, PublicKey, AccountMeta] = PublicKey("11111111111111111111111111111111"),
-    token_program: Union[str, PublicKey, AccountMeta] = PublicKey("TokenkegQfeZyiNwAJbNbGKPFXCWuBvf9Ss623VQ5DA"),
+    token_program: Union[str, PublicKey, AccountMeta] = PublicKey("4JkrrPuuQPxDZuBW1bgrM1GBa8oYg1LxcuX9szBPh3ic"),
     remaining_accounts: Optional[List[AccountMeta]] = None,
     program_id: Optional[PublicKey] = None,
 ):
